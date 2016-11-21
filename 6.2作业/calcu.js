@@ -36,4 +36,4 @@ function onclicksqrt() {
     str = document.getElementById("res");
     m = Math.sqrt(str.value);
     str.value = m;
-}//¸ùºÅ
+}//¸ùºÅjisuan
