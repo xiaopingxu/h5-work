@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>数组</title>
+    <script type="text/javascript">
+        //输入
+        var arr = new Array("a","x","b","d","m","a","k","m","a","j","a");
+
+        //输出函数结构
+        function CompObject(char,count,post){
+            this.char = char;
+            this.count = count;
+            this.post = post;
+        }
+
+        var newArray = new Array();
+
+        //遍历
+        for(i=0;i<arr.length;i++){
+           // console.log(arr[i])   打印数组每个元素
+            if(arr[i]!='%'){
+                var count= 0;
+                tmp=arr[i];
+                var postArray = new Array();
+                for(j=0;j<arr.length;j++){
+                    if(tmp==arr[j]){
+                        postArray.push(j);
+                        count++;
+                        arr[j]='%';
+                    }
+                }
+                newArray.push(new CompObject(tmp,count,postArray))
+            }
+        }
+    //按降序排列数组中的元素出现的次数
+        newArray.sort(function(x,y){
+            return y.count - x.count;
+        })
+
+
+        var obj = newArray[0]
+        maxChar=obj.char;//出现次数最多的字符
+        maxCharCount=obj.count;//次数
+
+        console.log("maxChar:"+maxChar);
+        console.log("maxCharCount:"+maxCharCount);
+        console.log("post:");
+        obj.post.forEach(function(e){
+            console.log(e)
+        })//所在的位置
+
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

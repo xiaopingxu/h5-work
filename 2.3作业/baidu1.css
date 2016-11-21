@@ -1,0 +1,202 @@
+@charset "utf-8";
+/* CSS Document */
+.container{
+    margin: 0 auto;
+    text-align: center;
+    width: 100%;
+    height:100%;
+    min-height: 600px;
+    min-width: 810px;
+    position: relative;
+   }
+.head{
+    margin-top: 20px;
+    width: 100%;
+    font-size: 13px;
+    }/*头部*/
+.LA{
+    position: relative;
+    width: 350px;
+    height: 20px;
+    float: right;
+	}/*糯米 新闻 hao123...*/
+a:link{color:#000000}
+a:hover{color: blue}
+.LA .a1{
+    font-weight: bold;
+    padding-right: 15px;
+}
+.set{
+	position: relative;
+	list-style-type: none;
+	width:45px;
+    height: 20px;
+    float: right;
+    }/*设置栏样式*/
+.set #set1{display: none  }/*隐藏设置栏下拉框*/
+.set:hover #set1{display: block}/*鼠标经过出现*/
+ul#set1{
+    width: 60px;
+    border: 1px solid #F5F5DC;
+    list-style:none;
+    padding-left: 3px;
+    line-height: 30px;
+}/*设置栏下拉框*/
+.more{
+	position: relative;
+	font-size: 13px;
+	background-color: #009FCC;
+	width: 70px;
+	height: 20px;
+	text-align: center;
+    float: right;
+  }/*更多产品*/
+.more #nav1{display: none}
+.more:hover #nav1{display: table}/*下拉样式table*/
+div#nav1{width: 80px;
+    border: 2px solid #F5F5DC;
+    border-top-style: none;
+    border-bottom-style: none;
+    list-style-position: inside;
+    height: 100%;
+    position: fixed;
+}
+li#music {
+    list-style-image: url(img/yin.png);
+    height: 20px;
+}/*百度音乐*/
+li#pic{
+    list-style-image:url(img/pic.png);
+    height: 20px;
+    margin-top: 50px;
+}/*百度图片*/
+li#know {
+    list-style-image: url(img/know.png);
+    height: 20px;
+    padding-top: 50px;
+}
+li#library{
+    list-style-image:url(img/library.png);
+    height: 20px;
+    padding-top: 50px;
+}/*百度文库*/
+li#top{
+    list-style-image:url(img/top.png);
+    height: 20px;
+    padding-top: 50px;
+}/*百度风云榜*/
+li#tui{
+    list-style-image:url(img/tui.png);
+    height: 20px;
+    padding-top: 50px;
+}/*百度推广*/
+li#all{
+    height: 20px;
+    padding-top: 50px;
+}
+.art{
+    width: 100%;
+    height: 300px;
+    text-align: center;
+    position: absolute;
+    margin-top:110px;
+}/*中间部分*/
+.art #picture{
+    width: 270px;
+    height:129px;
+    text-align: center;
+}
+.search{
+    position: relative;
+    margin-top: 65px ;
+    width: 540px;
+    height:35px;
+    padding-left: 10px;
+    font-size: 16px;
+    border:1px solid #B8B8B8;
+    *line-height:35px;/*for ie6-7*/
+}
+input:focus{
+    border-color:#38F;
+    outline: none;
+}/*输入框获取焦点后颜色变化*/
+#sousuo{
+    background: url(img/下载%20.png) no-repeat ;
+    background-position: 525px 12px;
+}
+#sousuo:hover{
+    background: url(img/下载%20.png) no-repeat ;
+    background-position: 525px -25px;
+}
+.button{
+	position: relative;
+	margin-top: 64px;
+	width: 100px;
+	height: 39px;
+	background-color: #3385FF;
+	border: 1px solid #3385FF;
+    color: #ffffff;
+	font-size:14px;
+	cursor: pointer;
+}/*搜索按钮样式*/
+@media screen\9 {
+    .button {  border: none; }
+}/*for ie6-7*/
+@media \0screen{
+    .search{line-height:35px;}
+    .button{vertical-align:2px;}
+}/* only for IE8*/
+.button:hover{
+    background-color:#4876FF;
+}
+.foot{
+    clear: both;
+    position: absolute;
+    height: 140px;
+    width: 100%;
+    bottom:0;
+}/*底部样式*/
+.foot1{
+    width: 76px;
+    height: 76px;
+    position: relative;
+    display:inline-block;
+    *display:inline;/*for ie6-7*/
+    *zoom:1;/*for ie6-7*/
+}/*手机百度二维码*/
+.foot2{
+    position: relative;
+    display:inline-block;
+    font-size: 13px;
+    line-height:250%;
+    color:#808080;
+    *display:inline;/*for ie6-7*/
+    *zoom:1;/*for ie6-7*/
+}/*手机百度 快人一步*/
+.foot3{
+    position: relative;
+    display:inline-block;
+    padding-left: 20px;
+    *display:inline;/*for ie6-7*/
+    *zoom:1;/*for ie6-7*/
+}/*糯米二维码*/
+.foot4{
+    position: relative;
+    display: inline-block;
+    font-size: 13px;
+    line-height: 250%;
+    color:#808080;
+    *display:inline;/*for ie6-7*/
+    *zoom:1;/*for ie6-7*/
+}/*百度糯米 一元大餐*/
+.foot5 {
+    position: relative;
+    display: inline-block;
+    font-size: 13px;
+    line-height: 200%;
+    padding-left: 30px;
+    text-align: left;
+    color: #808080;
+    *display:inline;/*for ie6-7*/
+    *zoom:1;/*for ie6-7*/
+}

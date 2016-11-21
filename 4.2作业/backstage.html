@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>后台管理系统</title>
+    <link rel="stylesheet" href="bootstrap.min.css">
+    <link href="//cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
+    <link href="backstage.css" rel="stylesheet" >
+</head>
+<body>
+<!--nav start!-->
+    <div class="myheading">
+        <nav class="navbar">
+            <div class="container">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="#">
+                        <img src="img/logo.jpg" style="width: 75px">
+                    </a>
+                </div>
+                <div class="page-header">
+                    <h1>后台管理系统 <small>Back-stage management system</small></h1>
+                </div>
+                <div class="container">
+                    <div class="navbar-header">
+                        <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target=".navbar-collapse">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a class="navbar-brand hidden-sm" href="#">首页</a>
+                    </div>
+                    <div class="navbar-collapse collapse" role="navigation">
+                        <ul class="nav navbar-nav">
+                            <li class="hidden-sm hidden-md"><a href="#"  target="_blank" >用户管理</a></li>
+                            <li><a href="#" target="_blank" >日志管理</a></li>
+                            <li><a href="#" target="_blank">内容审核</a></li>
+                            <li><a href="#" target="_blank">资产管理</a></li>
+                            <li><a href="#" target="_blank">网络维护</a></li>
+                            <li><a  href="#" target="_blank">统计分析</a></li>
+                        </ul>
+                        <div class="nav navbar-nav navbar-right hidden-sm">
+                            <div class="btn-group  " role="group">
+                                <button type="button" class="btn btn-default"><i class="icon-user"></i>用户资料</button>
+                                <a class="btn btn-primary dropdown-toggle" data-toggle="dropdown" href="#"><span class="caret"></span></a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="#"><i class="icon-pencil"></i> 完善资料</a></li>
+                                    <li><a href="#"><i class="icon-trash"></i> 修改密码</a></li>
+                                </ul>
+                            </div>
+                            <div class="btn-group  " role="group">
+                                <button type="button" class="btn btn-default"><i class="icon-user"></i>安全退出</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </div>
+<!--nav start!-->
+<div class="mybody container">
+    <div class="row">
+        <!-- 左边导航-->
+        <div class="leftmenu col-md-3 col-sm-5 hidden-xs">
+            <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+                <div class="panel panel-default">
+                    <div class="panel-heading"  role="tab" id="headingOne">
+                        <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">业务管理<span class="caret"></span></a>
+                    </div>
+                    <div  id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+                        <div class="list-group panel-body">
+                            <a class="list-group-item active"  href="#">短信群发</a>
+                            <a class="list-group-item"  href="#">业务统计</a>
+                            <a class="list-group-item" href="#">业务数据管理</a>
+                            <a class="list-group-item" href="#">网站数据统计</a>
+                            <a class="list-group-item" href="#">其他业务</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel panel-default">
+                    <div class="panel-heading"  role="tab" id="headingTwo">
+                        <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">系统管理<span class="caret"></span></a>
+                    </div>
+                    <div  id="collapseTwo" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingTwo">
+                        <div class="list-group panel-body">
+                            <a class="list-group-item"  href="#">系统设置</a>
+                            <a class="list-group-item"  href="#">用户资料统计</a>
+                            <a class="list-group-item" href="#">业务数据管理</a>
+                            <a class="list-group-item" href="#">网站数据统计</a>
+                            <a class="list-group-item" href="#">其他业务</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel panel-default">
+                    <div class="panel-heading"  role="tab" id="headingThree">
+                        <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="true" aria-controls="collapseThree">安全管理<span class="caret"></span></a>
+                    </div>
+                    <div  id="collapseThree" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingThree">
+                        <div class="list-group panel-body">
+                            <a class="list-group-item"  href="#">系统安全设置</a>
+                            <a class="list-group-item"  href="#">系统安全管理</a>
+                            <a class="list-group-item" href="#">权限设置</a>
+                            <a class="list-group-item" href="#">网站数据统计</a>
+                            <a class="list-group-item" href="#">其他业务</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 右边展示内容-->
+        <div class="content col-md-9 col-sm-7">
+            <ol class="breadcrumb">
+                <li><a href="#">统计分析</a></li>
+                <li><a href="#">业务管理</a></li>
+                <li><a href="#" class="active">短信群发</a></li>
+            </ol>
+            <div class="table-responsive">
+                <table class="table table-bordered table-hover table-striped">
+                    <thead>
+                    <tr>
+                        <th>序号</th>
+                        <th>用户名</th>
+                        <th>接收号码</th>
+                        <th>发送时间</th>
+                        <th>接收时间</th>
+                        <th>邮箱地址</th>
+                        <th>短信内容</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>01</td>
+                        <td>admin</td>
+                        <td>13222665544</td>
+                        <td>2016/01/01</td>
+                        <td>2016/01/02</td>
+                        <td>22667784@126.com</td>
+                        <td>网购七折，免费抽奖</td>
+                    </tr>
+                    <tr>
+                        <td>02</td>
+                        <td>admin</td>
+                        <td>13222665544</td>
+                        <td>2016/01/01</td>
+                        <td>2016/01/02</td>
+                        <td>22667784@126.com</td>
+                        <td>网购七折，免费抽奖</td>
+                    </tr>
+                    <tr>
+                        <td>03</td>
+                        <td>admin</td>
+                        <td>13222665544</td>
+                        <td>2016/01/01</td>
+                        <td>2016/01/02</td>
+                        <td>22667784@126.com</td>
+                        <td>网购七折，免费抽奖</td>
+                    </tr>
+                    <tr>
+                        <td>04</td>
+                        <td>admin</td>
+                        <td>13222665544</td>
+                        <td>2016/01/01</td>
+                        <td>2016/01/02</td>
+                        <td>22667784@126.com</td>
+                        <td>网购七折，免费抽奖</td>
+                    </tr>
+                    <tr>
+                        <td>05</td>
+                        <td>admin</td>
+                        <td>13222665544</td>
+                        <td>2016/01/01</td>
+                        <td>2016/01/02</td>
+                        <td>22667784@126.com</td>
+                        <td>网购七折，免费抽奖</td>
+                    </tr>
+                    <tr>
+                        <td>06</td>
+                        <td>admin</td>
+                        <td>13222665544</td>
+                        <td>2016/01/01</td>
+                        <td>2016/01/02</td>
+                        <td>22667784@126.com</td>
+                        <td>网购七折，免费抽奖</td>
+                    </tr>
+                    <tr>
+                        <td>07</td>
+                        <td>admin</td>
+                        <td>13222665544</td>
+                        <td>2016/01/01</td>
+                        <td>2016/01/02</td>
+                        <td>22667784@126.com</td>
+                        <td>网购七折，免费抽奖</td>
+                    </tr>
+                    <tr>
+                        <td>08</td>
+                        <td>admin</td>
+                        <td>13222665544</td>
+                        <td>2016/01/01</td>
+                        <td>2016/01/02</td>
+                        <td>22667784@126.com</td>
+                        <td>网购七折，免费抽奖</td>
+                    </tr>
+                    <tr>
+                        <td>09</td>
+                        <td>admin</td>
+                        <td>13222665544</td>
+                        <td>2016/01/01</td>
+                        <td>2016/01/02</td>
+                        <td>22667784@126.com</td>
+                        <td>网购七折，免费抽奖</td>
+                    </tr>
+                    <tr>
+                        <td>10</td>
+                        <td>admin</td>
+                        <td>13222665544</td>
+                        <td>2016/01/01</td>
+                        <td>2016/01/02</td>
+                        <td>22667784@126.com</td>
+                        <td>网购七折，免费抽奖</td>
+                    </tr>
+                    <tr>
+                        <td>11</td>
+                        <td>admin</td>
+                        <td>13222665544</td>
+                        <td>2016/01/01</td>
+                        <td>2016/01/02</td>
+                        <td>22667784@126.com</td>
+                        <td>网购七折，免费抽奖</td>
+                    </tr>
+                    <tr>
+                        <td>12</td>
+                        <td>admin</td>
+                        <td>13222665544</td>
+                        <td>2016/01/01</td>
+                        <td>2016/01/02</td>
+                        <td>22667784@126.com</td>
+                        <td>网购七折，免费抽奖</td>
+                    </tr>
+                    <tr>
+                        <td>13</td>
+                        <td>admin</td>
+                        <td>13222665544</td>
+                        <td>2016/01/01</td>
+                        <td>2016/01/02</td>
+                        <td>22667784@126.com</td>
+                        <td>网购七折，免费抽奖</td>
+                    </tr>
+                    </tbody>
+                </table>
+                <nav class="pull-right">
+                    <ul class="pagination">
+                        <li>
+                            <a href="#" aria-label="previous">
+                                <span aria-hidden="true">&laquo;</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">1</a>
+                        </li>
+                        <li>
+                            <a href="#">2</a>
+                        </li>
+                        <li>
+                            <a href="#">3</a>
+                        </li>
+                        <li>
+                            <a href="#">4</a>
+                        </li>
+                        <li>
+                            <a href="#">5</a>
+                        </li>
+                        <li>
+                            <a href="#" aria-label="previous">
+                                <span aria-hidden="true">&raquo;</span>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+
+    </div>
+
+        <!-- 页脚-->
+        <div class="myfooter">
+            <p class="bg-info">版权所有:XX网络有限公司&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;全国统一服务电话：40080098888</p>
+        </div>
+</div>
+    <script src="jquery-3.1.0.min.js"></script>
+    <script src="bootstrap.min.js"></script>
+    <script>
+        $(".navbar-nav a").click(function(e){
+            $(this).tab("show");
+        })
+        $(".dropdown-toggle").dropdown()
+
+    </script>
+</body>
+</html>

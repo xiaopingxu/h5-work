@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>登录界面</title>
+    <link rel="stylesheet" href="bootstrap.min.css">
+    <link href="//cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
+    <link href="backstage.css" rel="stylesheet" >
+</head>
+<body>
+<div style="position: absolute; top: 0; bottom: 0; width:100%; background-image: url(img/bj1.jpg);">
+    <div class="container">
+        <div class="login_box" >
+            <div class="box_head">
+                <img src="img/logo.jpg">
+            </div>
+            <div class="box_mid">
+                <form class="form-signin">
+                    <input type="text" id="loginName"class="form-control" placeholder="用户名" required autofocus>
+                    <input type="password" id="inputPassword" class="form-control" placeholder="密码" required>
+                    <div id="remember" class="checkbox">
+                        <label>
+                            <input type="checkbox" style="display:inline;" value="remember-me">记住我
+                        </label>
+                    </div>
+                    <button class="btn btn-lg btn-primary btn-block" type="button" onclick="login()">登录</button>
+                    <a class="btn btn-lg btn-success btn-block " href="#">注册</a>
+                    <a href="#">忘了密码？</a>
+                </form>
+            </div>
+            <div class="box_foot"></div>
+        </div>
+
+    </div>
+</div>
+<script language="javascript">
+    function login() {
+        var loginName = document.getElementById("loginName").value;
+        var inputPassword = document.getElementById("inputPassword").value;
+        if (loginName == "") {
+            alert("请输入用户名");
+            return;
+        }
+
+        if (inputPassword == "") {
+            alert("请输入密码");
+            return;
+        }
+        window.location.href = "backstage.html";
+
+    }
+</script>
+
+</body>
+
+
+</html>

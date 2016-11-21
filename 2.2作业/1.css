@@ -1,0 +1,43 @@
+@charset "utf-8";
+/* CSS Document */
+.module{
+    width:710px;
+    background-color:#FFFFFF;
+    left: 50%;
+    top: auto;
+    position: absolute;
+    margin-left: -355px;
+    -webkit-border-radius: 20px;/*圆角*/
+}/*注册表格背景样式*/
+.tb{
+    font-size: 12px;
+    line-height: 160%;
+    border: 1px solid;
+}/*表格样式*/
+.logo{
+    position: relative;
+    display: inline-block;
+    left: 22px;
+}/*LOGO样式*/
+.reg{
+    position: absolute;
+    display: inline-block;
+    width: 145px;
+    left: 543px;
+    top: 54px;
+    font-size: 14px;
+}/*注册登录收藏样式*/
+.blue{
+    color: #0000FF;
+
+}
+.strong{
+    font-family:"黑体";
+}
+.td{word-break:break-all; width: 496px}
+.table{
+    table-layout:fixed;
+}
+.a{
+    color: #0000FF;
+}/*超链接颜色*/

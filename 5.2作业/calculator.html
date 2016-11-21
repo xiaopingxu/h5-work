@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>简易计算器</title>
+    <link href="calc.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+    <div class="container">
+        <form name="form1">
+            <input type="number" placeholder="请输入数字" name="num1" value=""><br>
+            <select id="sel">
+                <option value="+">+</option>
+                <option value="-">-</option>
+                <option value="*">*</option>
+                <option value="/">/</option>
+            </select><br>
+            <input type="number" placeholder="请输入数字" name="num2"><br>
+            <input type="button" value="等于" onclick="calcResult()">
+            <div class="box" id="result">
+            </div>
+        </form>
+    </div>
+<script>
+    function calcResult(){
+        var num1 = Number(document.form1.num1.value);
+        var num2 = Number(document.form1.num2.value);
+        var  result = document.getElementById("result");
+        var  sel = document.getElementById("sel");
+        var val = sel.options[sel.selectedIndex].value;//获得被选中的值
+        var resValue;
+
+        if(val=="+"){
+            resValue=num1+num2;
+
+        }//如果被选中值为+
+        if(val=="-"){
+            resValue=num1-num2;
+        }//如果被选中值为-
+        if(val=="*"){
+            resValue=num1*num2;
+        }//如果被选中值为*
+        if(val=="/"){
+            resValue=num1/num2;
+          if(num2==0){
+              alert("除数不能为零");
+              resValue=NaN
+           }
+        }//如果被选中值为/
+        result.innerText=resValue
+    }
+</script>
+</body>
+</html>

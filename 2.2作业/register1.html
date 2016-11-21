@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>青岛家教网</title>
+    <style type="text/css">
+        .module{
+            width:710px;
+            height:522px;
+            background-color:#FFFFFF;
+            left: 50%;
+            top: auto;
+            position: absolute;
+            margin-left: -355px;
+            -webkit-border-radius: 20px;/*圆角*/
+        }
+        .tb{
+            font-size: 12px;
+            line-height: 160%;
+            border: 1px solid;
+         }
+        .logo{
+            position: relative;
+            display: inline-block;
+            left: 22px;
+        }
+        .reg{
+            position: absolute;
+            display: inline-block;
+            width: 145px;
+            left: 543px;
+            top: 54px;
+            font-size: 14px;
+        }
+    </style>
+</head>
+    <body bgcolor="#007799"><!--网页背景颜色-->
+    <div class="module">
+        <header>
+            <a href="http://www.qdjj.net/">
+                <img src="qdjjlogo.gif" height="76" width="180" class="logo"><!--logo图片-->
+            </a>
+        <div class="reg">
+            <a href="http://www.qdjj.net/member/register.asp">
+                <font color="#ff1493">注册</font></a>
+            <a href="http://www.qdjj.net/login.asp"><font color="#ff1493">登录</font></a>
+            <a href="http://www.qdjj.net/login.asp"><font color="#ff1493">收藏本站</font></a>
+        </div>
+</header>
+<content>
+    <table width="90%" border="1"  align="center" class="tb" cellpadding="1" cellspacing="0"><!--注册表格-->
+        <tr>
+            <td colspan="3"><h2 align="center">新教员注册第一步选择用户名、密码和身份</h2></td>
+        </tr>
+
+         <tr>
+        <td height="22" colspan="3" >注意：带<font color="#ff000" >*</font>为必填</td>
+        </tr>
+　       <tr>
+            <td height="22" colspan="3" bgcolor="#DDDDDD"><strong>&nbsp;&nbsp;登录名和密码</strong></td>
+        </tr>
+　　    <tr>
+            <td width="17%" align="right"><font color="red">*</font>会员名 </td>
+            <td width="31">
+                <input type="text" name="username" required="required">
+            </td>
+            <td width="52%"><font color="#ff4500" >3-12个字符</font>会员名须以字母开头，只能由英文字母、数字、
+                    下划线组成，中间不能有空格。
+             </td>
+        </tr>
+        <tr>
+            <td width="17%" align="right"><font color="red">*</font>密码 </td>
+            <td width="31">
+                <input type="password" name="password" required="required">
+            </td>
+            <td width="52%"><font color="#ff4500" >6-20个字符</font>区分英文字母大小写。
+            </td>
+        </tr>
+        <tr>
+            <td width="17%" align="right"><font color="red">*</font>确认密码 </td>
+            <td width="31">
+                <input type="password" name="password" required="required">
+            </td>
+            <td width="52%">确认密码要与密码完全一致，注意英文字母大小写。
+            </td>
+        </tr>
+        <tr>
+            <td height="22" colspan="3" bgcolor="#DDDDDD"><strong>&nbsp;&nbsp;选择教员身份</strong></td>
+        </tr>
+        <tr>
+            <td height="28" align="right"><font color="red">*</font>教员身份
+            </td>
+
+            <td colspan="2">
+                <input type="radio" name="flag" value="1">在校大学生(研究生) ,不含留学生<br>
+                <input type="radio" name="flag" value="2">专职教师(在职/进修/离职/退休)<br>
+                <input type="radio" name="flag" value="3">外籍人士(含留学生、外教)，海外归国人员<br>
+                <input type="radio" name="flag" value="3" checked="checked"> 社会职业人士(已经毕业离校的非教师职业人员)<br>
+            </td>
+        </tr>
+        <tr>
+            <td height="60" colspan="3" align="center">
+                <a href="register2.html" ><input type="submit" name="button" value="提交"></a>
+                <input type="reset" name="button" value="重置">
+
+            </td>
+        </tr>
+    </table>
+</content>
+    <footer>
+        <p align="center" style="font-size: 12px" ><font color="#999999">Copyright © 2003～2008</font>&nbsp;
+            版权所有 青岛家教网
+        </p><!--页脚-->
+    </footer>
+</div>
+</body>
+</html>

@@ -1,0 +1,677 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>hao123</title>
+    <link href="hao.css" type="text/css" rel="stylesheet">
+
+</head>
+<body  onload="onLoad()">
+    <div class="container">
+        <div class="headerwap">
+            <div class="head">
+                <div class="sethome">
+                    <a href="https://www.hao123.com/" target="_self" id="sethome">
+                        <img src="img/logo.png" class="logo">
+                        <span id="seth">设为首页</span>
+                    </a>
+                </div>
+                <div class="colweather">
+                    <a href="https://www.baidu.com/s?word=%E8%8B%8F%E5%B7%9E%E5%A4%A9%E6%B0%94&tn=50000030_hao_pg&ie=utf-8" target="_blank" id =weather>
+                        <span>苏州</span>
+                        <img src="img/xl.png" width="18px" height="18px">
+                        <img src="img/weather.ico">
+                        <span>多云</span>
+                        <span>18-14℃</span>
+                    </a>
+                </div>
+                <div class="rili">
+                    <a href="#" id=xinli>11月16日</a>
+                    <a href="#" id="xingqi">周三</a>
+                    <a href="#" id="nongli">十月十七</a>
+                    <a href="#" id="xingzuo">星座运势</a>
+                </div>
+                <div class="tools">
+                    <img src="img/y.png">
+                    <a href="#" id=denglu>登录</a>
+                    <a href="#" id="wp">网盘</a>
+                    <a href="#" id="yx">邮箱</a>
+                    <a href="#" id="llq">浏览器</a>
+                    <a href="#" id="hf">换肤</a>
+                    <a>
+                         <img src="img/smile.png" width="24px" height="24px">
+                        <span style="color:#0aa770">自黑起也是蛮拼的</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <!-- head end-->
+        <div class="baidu">
+        <!-- baidu搜索栏-->
+            <div class="searchwap">
+                <div class="bdlogo">
+                    <img src="https://m.baidu.com/static/index/plus/logo.png" width="120px" height="40px">
+                </div>
+                <form  action="https://www.baidu.com/" method="post">
+                    <div class="=sbmt">
+                        <div class="searchbox">
+                            <a href="#">网页
+                                <img src="img/xl.png" width="18px" height="18px">
+                            </a>
+                             <input type="text"name="searchword" id="searchword" >
+                            <a href="#">
+                                <img src="img/num1.png"width="20px">
+                            </a>
+                        </div><input type="submit" name="button"  value="" class="button" id="bdbtn">
+                    </div>
+                </form>
+                <div class="skin">
+                <!-- 换肤功能-->
+
+                        <a href="#" class="skinBtn"  onclick="changeOrange()" id="orange"></a>
+                        <a href="#" class="skinBtn" onclick="changeRed()" id="red"></a>
+                        <a href="#" class="skinBtn" onclick="changeYellow()" id="yellow"></a>
+                        <a href="#" class="skinBtn" onclick="changeBlue()" id="blue"></a>
+                        <a href="#" class="skinBtn" onclick="changeGreen()" id="green"></a>
+
+                </div>
+            </div>
+            <div class="resou">
+                <ul>
+                    <li>
+                        <a href="#"><img src="img/ss.png"></a>
+                    </li>
+                    <li>
+                        <a href="#">苏州天气</a>
+                    </li>
+                    <li>
+                        <a href="#">NBA</a>
+                    </li>
+                    <li>
+                        <a href="#">陈坤撞脸宋小宝</a>
+                    </li>
+                    <li>
+                        <a href="#">赵丽颖已结婚？</a>
+                    </li>
+                    <li>
+                        <a href="#">王宝强被骂惨</a>
+                    </li>
+                    <li>
+                        <a href="#">iphone自动关机</a>
+                    </li>
+                    <li>
+                        <a href="#">刘恺威与柳岩</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="navbar">
+            <!-- 导航栏-->
+            <div class="navigation" id="navgt">
+            <ul>
+                <li class="active" id="shouye">
+                    <a href="#">首页</a>
+                </li>
+                <li>
+                    <a href="#">电视剧</a>
+                </li>
+                <li>
+                    <a href="#">最新电影</a>
+                </li>
+                <li>
+                    <a href="#">新闻头条</a>
+                </li>
+                <li>
+                    <a href="#">八卦娱乐</a>
+                </li>
+                <li>
+                    <a href="#">军事热点</a>
+                </li>
+                <li>
+                    <a href="#">热门游戏</a>
+                </li>
+                <li>
+                    <a href="#">小游戏</a>
+                </li>
+                <li>
+                    <a href="#">今日特价</a>
+                </li>
+                <li>
+                    <a href="#">特价旅游</a>
+                </li>
+                <li>
+                    <a href="#">苏州生活</a>
+                </li>
+            </ul>
+        </div>
+            <div class="recommend" id="rcmd">
+                <ul>
+                    <li class="active1" id="qwtj">
+                        权威推荐
+                    </li>
+                    <li>
+                        <a href="#">人民网</a>
+                    </li>
+                    <li>
+                        <a href="#">新华网</a>
+                    </li>
+                    <li>
+                        <a href="#">央视网</a>
+                    </li>
+                    <li>
+                        <a href="#">国际在线</a>
+                    </li>
+                    <li>
+                        <a href="#">中国日报网</a>
+                    </li>
+                    <li>
+                        <a href="#">中国网</a>
+                    </li>
+                    <li>
+                        <a href="#">中国经济网</a>
+                    </li>
+                    <li>
+                        <a href="#">光明网</a>
+                    </li>
+                    <li>
+                        <a href="#">央广网</a>
+                    </li>
+                    <li>
+                        <a href="#">求是网</a>
+                    </li>
+                    <li>
+                        <a href="#">中国青年网</a>
+                    </li>
+                    <li>
+                        <a href="#">中国网信网</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="mainwap">
+            <!-- z主屏内容-->
+            <div class="left">
+            <!-- 左边内容-->
+                <div class="starbar" id="box-star">
+                <!-- 类别推荐列表-->
+                    <ul>
+                        <li class="starbar-list">
+                            <div class="category">
+                                <i class="star-icon i-tv"></i>
+                                <a href="http://v.hao123.com/dianshi/" title="电视剧" class="baritem-link ">电视剧</a>
+                                <span class="split">|</span>
+                                <a href="http://v.hao123.com/zongyi/" title="综艺"class="link1" >综艺</a>
+                            </div>
+                        </li>
+                        <li class="starbar-list">
+                            <div class="category">
+                                <i class="star-icon i-game"></i>
+                                <a href="http://v.hao123.com/dianshi/" title="游戏" class="baritem-link ">游戏</a>
+                                <span class="split">|</span>
+                                <a href="http://v.hao123.com/zongyi/" title="小游戏"class="link1" >小游戏</a>
+                            </div>
+                        </li>
+                        <li class="starbar-list">
+                            <div class="category">
+                                <i class="star-icon i-movie"></i>
+                                <a href="http://v.hao123.com/dianshi/" title="电影" class="baritem-link ">电影</a>
+                                <span class="split">|</span>
+                                <a href="http://v.hao123.com/zongyi/" title="直播"class="link1" >直播</a>
+                            </div>
+                        </li>
+                        <li class="starbar-list">
+                            <div class="category">
+                                <i class="star-icon i-comic"></i>
+                                <a href="http://v.hao123.com/dianshi/" title="动画" class="baritem-link ">动画</a>
+                                <span class="split">|</span>
+                                <a href="http://v.hao123.com/zongyi/" title="漫画"class="link1" >漫画</a>
+                            </div>
+                        </li>
+                        <li class="starbar-list">
+                            <div class="category">
+                                <i class="star-icon i-toutiao"></i>
+                                <a href="http://v.hao123.com/dianshi/" title="新闻" class="baritem-link ">新闻</a>
+                                <span class="split">|</span>
+                                <a href="http://v.hao123.com/zongyi/" title="军事"class="link1" >军事</a>
+                            </div>
+                        </li>
+                        <li class="starbar-list">
+                            <div class="category">
+                                <i class="star-icon i-travel"></i>
+                                <a href="http://v.hao123.com/dianshi/" title="旅游" class="baritem-link ">旅游</a>
+                                <span class="split">|</span>
+                                <a href="http://v.hao123.com/zongyi/" title="音乐"class="link1" >音乐</a>
+                            </div>
+                        </li>
+                        <li class="starbar-list">
+                            <div class="category">
+                                <i class="star-icon i-caipiao"></i>
+                                <a href="http://v.hao123.com/dianshi/" title="彩票" class="baritem-link ">彩票</a>
+                                <span class="split">|</span>
+                                <a href="http://v.hao123.com/zongyi/" title="竞猜"class="link1" >竞猜</a>
+                            </div>
+                        </li>
+                        <li class="starbar-list">
+                            <div class="category">
+                                <i class="star-icon i-tuan"></i>
+                                <a href="http://v.hao123.com/dianshi/" title="特价" class="baritem-link ">特价</a>
+                                <span class="split">|</span>
+                                <a href="http://v.hao123.com/zongyi/" title="手机"class="link1" >手机</a>
+                            </div>
+                        </li>
+                        <li class="starbar-list">
+                            <div class="category">
+                                <i class="star-icon i-gaoxiao"></i>
+                                <a href="http://v.hao123.com/dianshi/" title="搞笑" class="baritem-link ">搞笑</a>
+                                <span class="split">|</span>
+                                <a href="http://v.hao123.com/zongyi/" title="小说"class="link1" >小说</a>
+                            </div>
+                        </li>
+                        <li class="starbar-list">
+                            <div class="category">
+                                <i class="star-icon i-music"></i>
+                                <a href="http://v.hao123.com/dianshi/" title="股票" class="baritem-link ">股票</a>
+                                <span class="split">|</span>
+                                <a href="http://v.hao123.com/zongyi/" title="理财"class="link1" >理财</a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="startools-box">
+                    <!-- 工具栏-->
+                    <i class="startools-icon i-life"></i>
+                    <a href="#">天气</a>
+                    <a href="#">星座</a>
+                    <a href="#">网盘</a>
+                    <a href="#">快递</a>
+                    <a href="#">违章</a>
+                    <a href="#">
+                        <img src="img/xl.png" width="15px">
+                    </a>
+                </div>
+                <div class="hot-comuln">
+                    <div class="comuln">
+                        <a href="#" class="active1 cnav">推荐</a>
+                        <a href="#" class="cnav">社会</a><span class="split">|</span>
+                        <a href="#" class="cnav">娱乐</a><span class="split">|</span>
+                        <a href="#" class="cnav">军事</a><span class="split">|</span>
+                        <a href="#" class="cnav">体育</a>
+                    </div>
+                    <div class="picturenews">
+                        <a href="#">
+                            <img src="https://gss0.bdstatic.com/5eR1dDebRNRTm2_p8IuM_a/res/r/image/2016-11-17/5958e4d6f863b8e5115339f4ae09fff6.jpg" width="278px">
+                            <span class="picnew">新西兰大震后发生的一幕</span>
+                        </a>
+                    </div>
+                    <div class="toutiao">
+                        <p>
+                            <i class="rank"></i><a href="#">景海鹏陈冬今日撤离天宫 带这些回来</a>
+                        </p>
+                        <p>
+                            <i class="rank"></i><a href="#">八达岭老虎伤人事故完整视频首曝光</a>
+                        </p>
+                        <p>
+                            <i class="rank"></i><a href="#">普京政敌被杀 背后竟是此国美女间谍</a>
+                        </p>
+                        <p>
+                            <i class="rank"></i><a href="#">延安特大凶杀案致3死5伤 一村长被捅</a>
+                        </p>
+                        <p>
+                            <i class="rank"></i><a href="#">33岁小伙加班时胸痛 入院10分钟猝死</a>
+                        </p>
+                        <p>
+                            <i class="rank"></i><a href="#" style="color: #f30">色官"母女通吃"降半级 查处还是保护</>
+                        </p>
+                        <p>
+                            <i class="rank"></i><a href="#">东莞工地挖出不腐棺尸 面容清晰可见</a>
+                        </p>
+                        <p>
+                            <i class="rank"></i><a href="#">iPhone可换电池？苹果客服这样承诺</a>
+                        </p>
+
+                    </div>
+                 </div>
+            </div>
+            <div class="right">
+                <div class="right-top" id="rightTop">
+                    <div class="mark">
+                        <ul>
+                            <li class="mark-menu">
+                                <a href="http://www.baidu.com/?tn=sitehao123_15" data-title="百度" style="background:url(https://gss1.bdstatic.com/5eN1dDebRNRTm2_p8IuM_a/res/img/defaultIcon1229.png) no-repeat  2px -198px;" class="sitemainlink">百度</a>
+                                •
+                                <a href="#" class="sitesublink">贴吧</a>
+                            </li>
+                            <li class="mark-menu">
+                                <a href="#" data-title="新浪" style="background:url(https://gss1.bdstatic.com/5eN1dDebRNRTm2_p8IuM_a/res/img/defaultIcon1229.png) no-repeat 2px -278px;" class="sitemainlink">新浪</a>
+                                •
+                                <a href="#"class="sitesublink">微博</a>
+                            </li>
+                            <li class="mark-menu">
+                                <a href="#" data-title="搜狐" style="background:url(https://gss1.bdstatic.com/5eN1dDebRNRTm2_p8IuM_a/res/img/defaultIcon1229.png) no-repeat 2px -318px;" class="sitemainlink">搜狐</a>
+                                •
+                                <a href="#"class="sitesublink">热点</a>
+                            </li>
+                            <li class="mark-menu">
+                                <a href="#" data-title="腾讯" style="background:url(https://gss1.bdstatic.com/5eN1dDebRNRTm2_p8IuM_a/res/img/defaultIcon1229.png) no-repeat 2px -38px;" class="sitemainlink">腾讯</a>
+                            </li>
+                            <li class="mark-menu">
+                                <a href="#" data-title="网易" style="background:url(https://gss1.bdstatic.com/5eN1dDebRNRTm2_p8IuM_a/res/img/defaultIcon1229.png) no-repeat 2px -157px;" class="sitemainlink">网易</a>
+                            </li>
+                            <li class="mark-menu">
+                                <a href="#" data-title="优酷网" style="background:url(https://gss1.bdstatic.com/5eN1dDebRNRTm2_p8IuM_a/res/img/defaultIcon1229.png) no-repeat 2px -398px;" class="sitemainlink">优酷网</a>
+                            </li>
+                            <li class="mark-menu">
+                                <a href="#" data-title="凤凰网" style="background:url(https://gss1.bdstatic.com/5eN1dDebRNRTm2_p8IuM_a/res/img/defaultIcon1229.png) no-repeat 2px -238px;" class="sitemainlink">凤凰网</a>
+                            </li>
+                            <li class="mark-menu">
+                                <a href="#" data-title="新浪微博" style="background:url(https://gss1.bdstatic.com/5eN1dDebRNRTm2_p8IuM_a/res/img/defaultIcon1229.png) no-repeat 2px -118px;" class="sitemainlink">新浪微博</a>
+                            </li>
+                            <li class="mark-menu">
+                                <a href="#" data-title="淘宝网" style="background:url(https://gss1.bdstatic.com/5eN1dDebRNRTm2_p8IuM_a/res/img/defaultIcon1229.png) no-repeat 2px -358px;" class="sitemainlink">淘宝网</a>
+                            </li>
+                            <li class="mark-menu">
+                                <a href="#" data-title="QQ空间" style="background:url(https://gss1.bdstatic.com/5eN1dDebRNRTm2_p8IuM_a/res/img/defaultIcon1229.png) no-repeat 2px -78px;" class="sitemainlink">QQ空间</a>
+                            </li>
+                            <li class="mark-menu">
+                                <a href="#" data-title="4399游戏" style="background:url(https://gss1.bdstatic.com/5eN1dDebRNRTm2_p8IuM_a/res/img/defaultIcon1229.png) no-repeat 2px 2px;" class="sitemainlink">4399游戏</a>
+                            </li>
+                            <li class="mark-menu">
+                                <a href="#" data-title="谷歌" style="background:url(https://gss1.bdstatic.com/5eN1dDebRNRTm2_p8IuM_a/res/img/defaultIcon1229.png) no-repeat 2px -598px;" class="sitemainlink">谷歌</a>
+                            </li>
+                            <li class="mark-menu">
+                                <a href="#" data-title="人人网" style="background:url(https://gss1.bdstatic.com/5eN1dDebRNRTm2_p8IuM_a/res/img/defaultIcon1229.png) no-repeat 2px -438px;" class="sitemainlink">人人网</a>
+                            </li>
+                            <li class="mark-menu">
+                                <a href="#" data-title="影视大全" style="background:url(https://gss2.bdstatic.com/5bVYsj_p_tVS5dKfpU_Y_D3/urlicon/1419388771.png) no-repeat 2px 44%" class="sitemainlink">影视大全</a>
+                            </li>
+                            <li class="mark-menu">
+                                <a href="#" data-title="天猫" style="background:url(https://gss3.bdstatic.com/5bVXsj_p_tVS5dKfpU_Y_D3/urlicon/10138.2.png) no-repeat 2px 44%" class="sitemainlink">天猫</a>
+                            </li>
+                            <li class="mark-menu">
+                                <a href="#" data-title="彩票开奖" style="background:url(https://gss1.bdstatic.com/5eN1dDebRNRTm2_p8IuM_a/res/img/defaultIcon1229.png) no-repeat 2px -558px;" class="sitemainlink">彩票开奖</a>
+                            </li>
+                            <li class="mark-menu">
+                                <a href="#" data-title="汽车之家" style="background:url(https://gss1.bdstatic.com/5eN1dDebRNRTm2_p8IuM_a/res/img/defaultIcon1229.png) no-repeat 2px -518px;" class="sitemainlink">汽车之家</a>
+                            </li>
+                            <li class="mark-menu">
+                                <a href="#" data-title="美食天下" style="background:url(https://gss3.bdstatic.com/5bVXsj_p_tVS5dKfpU_Y_D3/urlicon/9310.png) no-repeat 2px 44%" class="sitemainlink">美食天下</a>
+                            </li>
+                            <li class="mark-menu">
+                                <a href="#" data-title="淘宝特卖" style="background:url(https://gss3.bdstatic.com/5bVXsj_p_tVS5dKfpU_Y_D3/urlicon/3780.png) no-repeat 2px 44%" class="sitemainlink">淘宝特卖</a>
+                            </li>
+                            <li class="mark-menu" style="border: 1px dotted #999">
+                                <a href="#" data-title="添加网址" style="background:url(img/plus.png) no-repeat 2px 44%" class="sitemainlink"><font style="color: #999">添加网址</font></a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="famous">
+                    <!-- 热门网站-->
+                        <ul>
+                            <li class="famous-menu">
+                                <a href="#" class="f-mainlink">东方财富</a>•
+                                <a href="#">理财</a>
+                            </li>
+                            <li class="famous-menu">
+                                <span class="f-icon" style="background-image: url(https://gss0.bdstatic.com/5eR1dDebRNRTm2_p8IuM_a/res/r/image/2016-11-11/331a6bbc2154a554b62b5bfce2d5cbd6.png);"></span>
+                                <a href="#" style="color: #f30">58同城</a>
+                                <a>
+                                    <i class="g-icon">购车狂欢</i>
+                                </a>
+                            </li>
+                            <li class="famous-menu">
+                                <span class="f-icon" style="    background-image: url(https://gss0.bdstatic.com/5eR1dDebRNRTm2_p8IuM_a/res/r/image/2016-11-11/0be95b2e21e963014e4e1d9be6b8c62b.png);"></span>
+                                <a href="#">房天下</a>
+                            </li>
+                            <li class="famous-menu">
+                                <span class="f-icon" style="background-image: url(https://gss0.bdstatic.com/5eR1dDebRNRTm2_p8IuM_a/res/img/xiecheng20151019.png);"></span>
+                                <a href="#">携程旅行网</a>
+                            </li>
+                            <li class="famous-menu">
+                                <a href="#" class="f-mainlink">百度地图</a>
+                            </li>
+                            <li class="famous-menu">
+                                <a href="#" class="f-mainlink">12306</a>•
+                                <a href="#">旅游</a>
+                            </li>
+                            <li class="famous-menu">
+                                <a href="#" class="f-mainlink">世纪佳缘</a>
+                            </li>
+                            <li class="famous-menu">
+                                <span class="f-icon" style="background-image: url(https://gss0.bdstatic.com/5eR1dDebRNRTm2_p8IuM_a/res/r/image/2016-11-11/b74a8a4247ffd56de2ebd7f9699d030a.png);"></span>
+                                <a href="#">赶集网</a>
+                            </li>
+                            <li class="famous-menu">
+                                <span class="f-icon" style="background-image:url(https://gss0.bdstatic.com/5eR1dDebRNRTm2_p8IuM_a/res/r/image/2016-11-11/734f4819ab4885faac8dc74715ee8adf.png);"></span>
+                                <a href="#">易车网</a>
+                            </li>
+                            <li class="famous-menu">
+                                <a href="#" class="f-mainlink">NBA</a>•
+                                <a href="#">体育</a>
+                                <a>
+                                    <i class="g-icon">最新新闻</i>
+                                </a>
+                            </li>
+                            <li class="famous-menu">
+                                <span class="f-icon" style="background-image:url(https://www.hao123.com/r/image/2016-11-15/9b2ea9128a32ce31b0593207bc8c863d.png);"></span>
+                                <a href="#">爱卡汽车</a>
+                            </li>
+                            <li class="famous-menu">
+                                <a href="#" class="f-mainlink">萌主页</a>•
+                                <a href="#">动漫</a>
+                            </li>
+                            <li class="famous-menu">
+                                <span class="f-icon" style="background-image:url(https://gss0.bdstatic.com/5eR1dDebRNRTm2_p8IuM_a/res/r/image/2016-11-11/e171303949d6123556e05c611ac1415d.png);"></span>
+                                <a href="#">唯品会</a>
+                                <a>
+                                    <i class="g-icon">大牌折扣</i>
+                                </a>
+                            </li>
+                            <li class="famous-menu">
+                                <a href="#" class="f-mainlink">锦绣未央</a>
+                                <a>
+                                    <i class="g-icon" style="background: url(https://www.hao123.com/r/image/2016-11-15/62d77de24b51c3b05a2ce00fee3ae22f.png) no-repeat;width: 29px;height: 16px;top:7px;"></i>
+                                </a>
+                            </li>
+                            <li class="famous-menu">
+                                <span class="f-icon" style="background-image:url(https://gss0.bdstatic.com/5eR1dDebRNRTm2_p8IuM_a/res/r/image/2016-11-11/fad209ce80a17e253d657ad4341a6ae3.png);"></span>
+                                <a href="#">途牛旅游网</a>
+                            </li>
+                            <li class="famous-menu">
+                                <a href="#" class="f-mainlink">hao123浏览器</a>
+                            </li>
+                            <li class="famous-menu">
+                                <a href="#" class="f-mainlink">头条新闻</a>
+                            </li>
+                            <li class="famous-menu">
+                                <a href="#" class="f-mainlink">直播吧</a>•
+                                <a href="#">开服表</a>
+                            </li>
+                            <li class="famous-menu">
+                                <span class="f-icon" style="background-image:url(https://gss0.bdstatic.com/5eR1dDebRNRTm2_p8IuM_a/res/r/image/2016-11-14/a5b68e38bb5407f68c951d59d9376fcf.png);"></span>
+                                <a href="#" style="color: #f30">苏宁手机馆</a>
+                            </li>
+                            <li class="famous-menu">
+                                <a href="#" class="f-mainlink spaColor" id="cpkj">彩票开奖</a>
+                            </li>
+                            <li class="famous-menu">
+                                <span class="f-icon" style="background-image:url(https://gss0.bdstatic.com/5eR1dDebRNRTm2_p8IuM_a/res/r/image/2016-11-11/2491248aeaf2e612de769bf2c3b89813.png);"></span>
+                                <a href="#" id="yhd" class="spaColor">1号店</a>
+                            </li>
+                            <li class="famous-menu">
+                                <a href="#" class="f-mainlink spaColor" id="hdj">好到家</a>
+                            </li>
+                            <li class="famous-menu">
+                                <span class="f-icon" style="background-image:url(https://gss0.bdstatic.com/5eR1dDebRNRTm2_p8IuM_a/res/r/image/2016-11-14/db10eadfee84df1f48808232451ed5c0.png);"></span>
+                                <a href="#" id="atb" class="spaColor">爱淘宝</a>
+                            </li>
+                            <li class="famous-menu">
+                                <a href="#" class="f-mainlink spaColor" id="gw">购物</a>•
+                                <a href="#" id="shj" class="spaColor">手机</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="xihao">
+                        <span class="tuijian"></span>
+                        <ul>
+                           <li class="tj-menu"><a href="#" class="f-mainlink">微信网页版</a></li>
+                           <li class="tj-menu"><a href="#" class="f-mainlink">163邮箱</a></li>
+                           <li class="tj-menu"><a href="#" class="f-mainlink">QQ邮箱</a></li>
+                           <li class="tj-menu"><a href="#" class="f-mainlink">中华军事</a></li>
+                           <li class="tj-menu"><a href="#" class="f-mainlink">网易云音乐</a></li>
+                           <li class="tj-menu">
+                               <a href="#" class="f-mainlink">新浪新闻</a>
+                               <a href="#" class="change"></a>
+                           </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="right-hot">
+                    <div class="hlbar">
+
+                        <ul>
+                            <li>
+                                <span class="hlbar-icon" style="background: url(https://gss0.bdstatic.com/5eR1dDebRNRTm2_p8IuM_a/res/hlbar_hot.png) 0px 7px no-repeat;"></span>
+                            </li>
+                            <li>
+                                <a href="#">新东方礼包</a>
+                            </li>
+                            <li>
+                                <a href="#">聚划算</a>
+                            </li>
+                            <li>
+                                <a href="#" style="color: #f30">牛股QQ群</a>
+                            </li>
+                            <li>
+                                <a href="#">青客抢好房</a>
+                            </li>
+                            <li>
+                                <a href="#">租房省1000</a>
+                            </li>
+                            <li>
+                                <a href="#">京东机票</a>
+                            </li>
+                            <li>
+                                <a href="#">工业品采购</a>
+                            </li>
+                            <li>
+                                <a href="#" style="color: #f30">特价机票</a>
+                            </li>
+                            <li>
+                                <a href="#">9块9包邮</a>
+                            </li>
+                            <li>
+                                <a href="#">工业设计</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="right-mid">
+                <!--猜你喜欢-->
+                    <span class="younik"></span>
+                    <div class="mid-main">
+                        <div class="row">
+                            <span><a class="shouzi">游戏</a></span>
+                            <ul>
+                                <li><a href="#">一秒9999级</a></li>
+                                <li><a href="#">领变态神兽</a></li>
+                                <li><a href="#">超变态坐骑</a></li>
+                                <li><a href="#">新侠武世界</a></li>
+                                <li><a href="#">少年群侠传</a></li>
+                                <li><a href="#">盗墓笔记</a></li>
+                                <li><a href="#">五鼠闹东京</a></li>
+                                <span> <a href="#" class="huan">换一换</a></span>
+                            </ul>
+                        </div>
+                        <div class="row">
+                            <span><a class="shouzi">热门</a></span>
+                            <ul>
+                                <li><a href="#" style="color: #f30">苏州二手车</a></li>
+                                <li><a href="#">扫码送牛股</a></li>
+                                <li><a href="#">股票微信群</a></li>
+                                <li><a href="#">微信炒股群</a></li>
+                                <li><a href="#">股民微信群</a></li>
+                                <li><a href="#">领股微信群</a></li>
+                                <li><a href="#">牛股大派送</a></li>
+                                <span> <a href="#" class="huan">换一换</a></span>
+                            </ul>
+                        </div>
+                        <div class="row">
+                            <span><a class="shouzi">购物</a></span>
+                            <ul>
+                                <li><a href="#">网上订杂志</a></li>
+                                <li><a href="#">苏宁大清仓</a></li>
+                                <li><a href="#">苏宁大聚惠</a></li>
+                                <li><a href="#">苏宁家电惠</a></li>
+                                <li><a href="#">新人有红包</a></li>
+                                <li><a href="#" style="color: #f30">服装特卖</a></li>
+                                <li><a href="#">网上逛超市</a></li>
+                                <span> <a href="#" class="huan">换一换</a></span>
+                            </ul>
+                        </div>
+                        <div class="row">
+                            <span><a class="shouzi">健康</a></span>
+                            <ul>
+                                <li><a href="#">同济来送子</a></li>
+                                <li><a href="#" style="color: #f30">整形666元!</a></li>
+                                <li><a href="#">无痛玻尿酸</a></li>
+                                <li><a href="#">满口种植牙</a></li>
+                                <li><a href="#">多颗牙缺失</a></li>
+                                <li><a href="#">牙科咨询</a></li>
+                                <li><a href="#">牙齿种植</a></li>
+                                <span> <a href="#" class="huan">换一换</a></span>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="right-botm">
+                    <div class="botmnav">
+                        <ul>
+                            <li><a href="#">电视剧</a></li>
+                            <li><a href="#">电影</a></li>
+                            <li><a href="#">新闻</a></li>
+                            <li><a href="#">娱乐</a></li>
+                            <li><a href="#">军事</a></li>
+                            <li><a href="#">小游戏</a></li>
+                            <li><a href="#">特价</a></li>
+                            <li><a href="#">海淘</a></li>
+                            <li><a href="#">综艺</a></li>
+                            <li><a href="#">软件</a></li>
+                            <li><a href="#">学习</a></li>
+                            <li><a href="#">理财</a></li>
+                        </ul>
+                    </div>
+                    <div class="botmmain">
+                        <div class="row">
+                            <span><a class="shouzi">推荐</a></span>
+                            <ul>
+                                <li><a href="#" style="color: #f30">京东热卖</a></li>
+                                <li><a href="#">教你理财</a></li>
+                                <li><a href="#">同城交友</a></li>
+                                <li><a href="#">美食外卖</a></li>
+                                <li><a href="#">百度网盘</a></li>
+                                <li><a href="#">好看学院</a></li>
+                                <li><a href="#">电影票预定</a></li>
+                                <span> <a href="#" class="huan">更多>></a></span>
+                            </ul>
+                        </div>
+                        <div class="row">
+                            <span><a class="shouzi">视频</a></span>
+                            <ul>
+                                <li><a href="#">爱奇艺高清</a></li>
+                                <li><a href="#">优酷网</a></li>
+                                <li><a href="#">百度视频</a></li>
+                                <li><a href="#">腾讯视频</a></li>
+                                <li><a href="#">芒果TV</a></li>
+                                <li><a href="#">影视大全</a></li>
+                                <li><a href="#">我们的十年</a></li>
+                                <span> <a href="#" class="huan">更多>></a></span>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="hao.js" type="text/javascript"></script>
+</body>
+</html>

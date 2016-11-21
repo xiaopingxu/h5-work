@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>分数等级划分</title>
+    <link href="level.css" rel="stylesheet"type="text/css">
+</head>
+<body>
+<div class="container">
+    <table class="bg">
+        <tr>
+            <th>姓名</th>
+            <th>分数</th>
+            <th>等级</th>
+            <th>操作</th>
+        </tr>
+        <tr>
+
+            <td>小明</td>
+            <td>
+                <input type="number" name="score" id="score1" max="100" min="0" onchange="if(!/(^0$)|(^100$)|(^\d{1,2}$)/.test(value)){value='';alert('分数超出范围!');}">
+            </td>
+            <td>
+                该生等级为：<span id="xiaoMing" style="color: red;font-size: 14px"></span>
+            </td>
+            <td>
+                <button class="btn" type="button" onclick="caclLevel()">点击</button>
+            </td>
+
+        </tr>
+    </table>
+
+</div>
+
+<script type="text/javascript">
+    function caclLevel(){
+        var M=document.getElementById("score1");
+        var m= M.value;
+        var levelM;
+
+
+         if(m>=90){
+         levelM = "1级";
+         }
+         if(m>= 80 && m < 90){
+         levelM = "2级";
+         }
+         if(m>= 70 && m < 80){
+         levelM = "3级";
+         }
+         if(m>= 60 && m< 70){
+         levelM = "4级";
+         }
+        if(m>= 50 && m< 60){
+            levelM = "5级";
+        }
+        if(m>= 40 && m< 50){
+            levelM = "6级";
+        }
+        if(m>= 30 && m< 40){
+            levelM = "7级";
+        }
+        if(m>= 20 && m< 30){
+            levelM = "8级";
+        }
+        if(m>= 10 && m< 20){
+            levelM = "9级";
+        }
+        if(m>= 0 && m< 10){
+            levelM = "10级";
+        }
+        if(m==""){
+            levelM="空";
+        }
+
+        document.getElementById("xiaoMing").innerText=levelM;
+    }
+
+</script>
+</body>
+</html>

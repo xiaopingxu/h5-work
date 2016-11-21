@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+<title>box1</title>
+    <style type="text/css">
+        .module{
+            width: 320px;
+            height:320px;
+            background-color:#FFFFFF;
+            left: 50%;
+            top: 50%;
+            margin-left: -160px;
+            margin-top: -160px;
+            position: absolute;
+
+        }
+        .square1{
+            width: 100px;
+            height: 100px;
+            background-color: #006400;
+            border: 2px;/*边框*/
+            -webkit-box-shadow: 5px 5px 10px #909090;/*阴影效果*/
+            position: absolute;/*绝对定位*/
+            text-align: center;
+            vertical-align: middle;
+            top: 2px;
+            left: 105px;
+         }
+        .square2{
+            width: 100px;
+            height: 100px;
+            background-color: #0000CC;
+            border: 2px;
+            -webkit-box-shadow: 5px 5px 10px #909090;/*阴影效果*/
+            position: absolute;/*绝对定位*/
+            left: 2px;
+            top: 107px;
+            }
+        .img{
+            float: left;/*向左浮动*/
+            position: absolute;
+            border: 2px;/*边框*/
+            text-align: center;
+            vertical-align: middle;
+            width: 100px;
+            height: 100px;
+            -webkit-box-shadow: 5px 5px 10px #909090;/*阴影效果*/
+            line-height: 100px;
+            background-color:bisque;
+            left: 107px;
+            top: 107px;
+        }
+        .square3{
+            width: 100px;
+            height: 100px;
+            background-color: #8B0A50;
+            border: 2px;/*边框*/
+            -webkit-box-shadow: 5px 5px 10px #909090;/*阴影效果*/
+            float: left;/*向左浮动*/
+            position: absolute;/*绝对定位*/
+            left: 214px;
+            top: 107px;
+         }
+        .square4 {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            border: 2px;/*边框*/
+            -webkit-box-shadow: 5px 5px 10px #909090; /*阴影效果*/
+            clear: left;/*不允许左侧浮动*/
+            position: absolute;/*绝对定位*/
+            left: 107px;
+            top: 214px;
+        }
+    </style>
+</head>
+<body>
+<div id="square-module" class="module">
+    <div id="square-div1" class="square1"></div><!--方块1-->
+    <div id="square-div2" class="square2"></div><!--方块2-->
+    <div id="square-div3" class="square3"></div><!--方块3-->
+    <div id="square-div4" class="square4" ></div><!--方块4-->
+	<div id="icon1" class="img" ><img src="1143897.gif" width="24" height="24"  ></div><!--我的图标-->
+</div>
+</body>
+</html>

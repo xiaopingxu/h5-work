@@ -1,0 +1,67 @@
+@charset  "utf-8";
+.myheading{
+    background-color: #009FCC;
+}
+.icon-bar{
+    background-color: #ffffff;
+    display: block;
+    width: 22px;
+    height: 2px;
+    border-radius: 1px;
+
+}
+.myfooter{
+    padding-bottom: 15px;
+    padding-top: 15px;
+    margin-top: 30px;
+    color: #767676;
+    text-align: center;
+    border-top: 1px solid #27408B;
+}
+.myheading img{
+    border:1px solid #009FCC;
+    border-radius: 20px;
+    -moz-border-radius: 20px;
+    -webkit-border-radius: 20px;
+}
+.login_box{
+    width: 477px;
+    height: 479px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    border: 5px solid #4F94CD;
+    border-radius: 8px;
+    -moz-border-radius: 8px;
+    -webkit-border-radius: 8px;
+    margin-top: -239px;
+    margin-left: -238px;
+    background-color:#FCFCFC;
+}
+.box_head{
+    height: 100px;
+    width:100%;
+    background-color:#4F94CD;
+    text-align: center;
+}
+.box_head img{
+    width: 100px;
+    border:1px solid #4F94CD ;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+}
+.box_mid{
+    width: 75%;
+    text-align: center;
+    margin: 20px auto;
+}
+.box_foot{
+    height:80px ;
+    width: 100%;
+    background-color: #4F94CD;
+  position: absolute;
+    bottom: 0;
+    margin: 0;
+    padding: 0;
+}
