@@ -13,8 +13,8 @@ function onclicknum(nums) {
     var parr1=/(^0+)([0-9])/;
     if(parr1.test(m))
     {   //设定替换语句，将整个运算式第一个数字为0开头的数字去除
-        m = m.match(parr1)[2];
-       m=m.replace(parr1,str);
+        str.value= m.match(parr1)[2];
+       m=m.replace(parr1,str.value);
     }
 }
 function onclickclear() {
@@ -36,4 +36,4 @@ function onclicksqrt() {
     str = document.getElementById("res");
     m = Math.sqrt(str.value);
     str.value = m;
-}//根号jisuan
+}//根号

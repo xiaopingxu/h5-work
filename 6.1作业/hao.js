@@ -68,7 +68,6 @@ function changeRed(){
 //黄色主题
 function changeYellow(){
 
-
     navgt.style.backgroundColor = "#EEEE00";//banner背景颜色
     navgt.style.border = "1px solid #EEEE00";//banner边框
     rightTop.style.border="1px solid #EEEE00";//主页右半部上部边框
@@ -108,7 +107,7 @@ function changeGreen(){
 //设置cookie
 function setCookie (name, value){
     //设置名称为name,值为value的Cookie
-   // document.cookie = name+"="+value+";";
+   //document.cookie = name+"="+value+";";
    // var expdate = new Date();   //初始化时间
    // expdate.setTime(expdate.getTime() + 10 * 1000);   //时间
     //document.cookie = name+"="+value+";expires="+expdate.toGMTString()+";";
@@ -117,33 +116,32 @@ function setCookie (name, value){
 
 
 //获取cookie
-function getCookie(key){
+function getCookie(name){
+
     if (document.cookie.length>0){
-        c_start=document.cookie.indexOf(key + "=");
+       var c_start=document.cookie.indexOf(name + "=");
         if (c_start!=-1)
         {
-            c_start=c_start + key.length+1;
+            c_start=c_start + name.length+1;
             //从c_start的位置开始查询';'
-            c_end=document.cookie.indexOf(";",c_start);
+          var  c_end=document.cookie.indexOf(";",c_start);
             if (c_end==-1) {
                 c_end = document.cookie.length;
             }
             //解码
-            return unescape(document.cookie.substring(c_start,c_end))
+            return unescape(document.cookie.substring(c_start,c_end));
 
 
         }
     }
-    return ""
+    return "";
 }
 
 
 function onLoad(){
     //获取当前cookie
     var skin = getCookie("skin");
-    if(skin==""){
-        changeRed();
-    } else if(skin=="green"){
+    if(skin=="green"){
         changeGreen();
     }else if(skin=="yellow"){
         changeYellow();
