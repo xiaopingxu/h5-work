@@ -5,7 +5,11 @@
 a {
     color: #333;
     text-decoration: none;
-    outline: 0;
+    outline:none;
+}
+img{
+    outline: none;
+    border: none;
 }
 li{
     list-style: none;

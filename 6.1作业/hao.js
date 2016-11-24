@@ -12,6 +12,8 @@
     var atb=document.getElementById("atb");
     var gw=document.getElementById("gw");
     var shj=document.getElementById("shj");
+
+
 //橘色主题
 function changeOrange(){
 
@@ -27,7 +29,7 @@ function changeOrange(){
     atb.style.color="#EE7600";//个别热门网站颜色
     shj.style.color="#EE7600";//个别热门网站颜色
     gw.style.color="#EE7600";//个别热门网站颜色
-    setCookie("skin","orange")
+    setCookie("skin","orange");
 
 }
 //蓝色主题
@@ -45,7 +47,7 @@ function changeBlue(){
     atb.style.color="#1874CD";//个别热门网站颜色
     shj.style.color="#1874CD";//个别热门网站颜色
     gw.style.color="#1874CD";//个别热门网站颜色
-    setCookie("skin","blue")
+    setCookie("skin","blue");
 
 }
 //红色主题
@@ -63,7 +65,7 @@ function changeRed(){
     atb.style.color="#EE0000";//个别热门网站颜色
     shj.style.color="#EE0000";//个别热门网站颜色
     gw.style.color="#EE0000";//个别热门网站颜色
-    setCookie("skin","red")
+    setCookie("skin","red");
 }
 //黄色主题
 function changeYellow(){
@@ -81,7 +83,7 @@ function changeYellow(){
     shj.style.color="#FFD700";//个别热门网站颜色
     gw.style.color="#FFD700";//个别热门网站颜色
 
-    setCookie("skin","yellow")
+    setCookie("skin","yellow");
 
 }
 //绿色主题
@@ -100,54 +102,57 @@ function changeGreen(){
     shj.style.color="#2E8B57";//个别热门网站颜色
     gw.style.color="#2E8B57";//个别热门网站颜色
 
-    setCookie("skin","green")
+    setCookie("skin","green");
 
 }
 
 //设置cookie
 function setCookie (name, value){
     //设置名称为name,值为value的Cookie
-   //document.cookie = name+"="+value+";";
-   // var expdate = new Date();   //初始化时间
-   // expdate.setTime(expdate.getTime() + 10 * 1000);   //时间
-    //document.cookie = name+"="+value+";expires="+expdate.toGMTString()+";";
-    document.cookie = name+"="+value+";";
+    var days=30;
+    var date=new Date();
+    date.setTime(date.getTime()+days*24*60*60*1000); //
+    document.cookie= name+"="+value+";"; expires=""+date.toGMTString(); //将date赋值给expires
+    console.log(expires);
 }
-
-
-//获取cookie
-function getCookie(name){
-
-    if (document.cookie.length>0){
-       var c_start=document.cookie.indexOf(name + "=");
-        if (c_start!=-1)
-        {
-            c_start=c_start + name.length+1;
-            //从c_start的位置开始查询';'
-          var  c_end=document.cookie.indexOf(";",c_start);
-            if (c_end==-1) {
-                c_end = document.cookie.length;
+// /获取cookie
+function getCookie(cname){
+        var skinval=document.cookie;
+    console.log("1-"+skinval);
+        var cst=skinval.indexOf(cname + "=");//索引的长度
+    console.log("2-"+cst);
+        if (cst!=-1) {
+            cst=cst + cname.length+1;
+            //从cst的位置开始查询';'
+            console.log("3-"+cst);
+            var cend=skinval.indexOf(";",cst);
+            console.log("4-"+cend);
+            if (cend==-1) {
+                cend = skinval.length;
+                console.log("5-"+cend);
             }
-            //解码
-            return unescape(document.cookie.substring(c_start,c_end));
-
-
+            //截取cookie字符串
+            var value=skinval.substring(cst,cend);
+            console.log("6-"+value);
         }
-    }
-    return "";
+        console.log(value)
+        return value;
 }
 
-
+// 调用函数
 function onLoad(){
     //获取当前cookie
     var skin = getCookie("skin");
-    if(skin=="green"){
+    if(skin==""){
+        changeRed()
+    }else if(skin=="green"){
         changeGreen();
     }else if(skin=="yellow"){
         changeYellow();
     }else if(skin=="red"){
         changeRed();
     }else if(skin=="blue"){
+       // alert("lan");
         changeBlue();
     }else if(skin=="orange"){
         changeOrange();
