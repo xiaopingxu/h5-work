@@ -12,6 +12,13 @@
     </div>
     <div class="btnArea">
         <p class="calc-row">
+            <input type="button" value="sin(角度)" class="calc-button calc-button-gray" onClick="sineAngle()">
+            <input type="button" value="cos(角度)" class="calc-button calc-button-gray" onClick="cosineAngle()">
+            <input type="button" value="sin(弧度)" class="calc-button calc-button-gray" onClick="sineRadian()">
+            <input type="button" value="cos(弧度)" class="calc-button calc-button-gray" onClick="cosineRadian()">
+
+        </p>
+        <p class="calc-row">
             <input type="button" value="BACK" class="calc-button calc-button-gray" onClick="onclickremove()">
             <input type="button" value="C" class="calc-button calc-button-gray" onClick="onclickclear()">
             <input type="button" value="√" class="calc-button calc-button-brown" onClick="onclicksqrt()">
@@ -43,6 +50,6 @@
         </p>
     </div>
 </form>
-<script src="calcu.js" type="text/javascript"></script>
+<script src="calcu.js" type="text/javascript" charset="gbk"></script>
 </body>
 </html>

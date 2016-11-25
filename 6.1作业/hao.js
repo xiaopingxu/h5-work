@@ -109,34 +109,31 @@ function changeGreen(){
 //设置cookie
 function setCookie (name, value){
     //设置名称为name,值为value的Cookie
-    var days=30;
+    var days=10;
     var date=new Date();
     date.setTime(date.getTime()+days*24*60*60*1000); //
-    document.cookie= name+"="+value+";"; expires=""+date.toGMTString(); //将date赋值给expires
-    console.log(expires);
+    document.cookie= name+"="+value+";expires="+date.toGMTString();//将date赋值给expires
+
+
 }
 // /获取cookie
 function getCookie(cname){
         var skinval=document.cookie;
-    console.log("1-"+skinval);
         var cst=skinval.indexOf(cname + "=");//索引的长度
-    console.log("2-"+cst);
+         var value;
         if (cst!=-1) {
             cst=cst + cname.length+1;
             //从cst的位置开始查询';'
-            console.log("3-"+cst);
             var cend=skinval.indexOf(";",cst);
-            console.log("4-"+cend);
             if (cend==-1) {
                 cend = skinval.length;
-                console.log("5-"+cend);
             }
             //截取cookie字符串
-            var value=skinval.substring(cst,cend);
-            console.log("6-"+value);
+            value=skinval.substring(cst,cend);
+        }else{
+             value="";
         }
-        console.log(value)
-        return value;
+    return value;
 }
 
 // 调用函数
@@ -144,7 +141,7 @@ function onLoad(){
     //获取当前cookie
     var skin = getCookie("skin");
     if(skin==""){
-        changeRed()
+        changeGreen()
     }else if(skin=="green"){
         changeGreen();
     }else if(skin=="yellow"){
@@ -156,5 +153,7 @@ function onLoad(){
         changeBlue();
     }else if(skin=="orange"){
         changeOrange();
+    }else{
+
     }
 }
