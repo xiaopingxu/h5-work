@@ -12,6 +12,7 @@ $(document).ready(function() {
 
             } else {
                 var inputObj = $(this);
+
                 checkInput (inputObj );
             }
         });
@@ -23,21 +24,22 @@ $(document).ready(function() {
             } else {
                 $(this).siblings(".ipt-tip").hide();
                 var inputObj = $(this);
-
                 checkInput (inputObj );
 
             }
 
         });
-
+        $(".clear").click(function(){
+            $("span").prev().val("");
+        }); //清除span的同级的上一个元素的值即清除输入框的值
     });
 
     //验证
     function checkInput (inputObj) {
-        var checkUser = /^[\u4e00-\u9fa5]{7}|[a-zA-Z]{14}$/g;//验证用户名
+        var checkUser = /^[\u4e00-\u9fa5]{1,7}|[a-zA-Z]{1,14}$/g;//验证用户名
         var checkNub = /^((\d2,3)|(\d{3}\-))?13\d{9}$/g;//验证手机号
         var checkPword = /^[A-Za-z0-9]+$/g;//验证验证码
-        var checkConpword = /^[^0-9a-zA-Z\.，,。？“”]{6,14}/g;
+        var checkConpword = /^[0-9a-zA-Z\.，,。？“”]{6,14}/g;
         //验证用户名
         if (inputObj.attr("id") =="username") {
            if(checkUser.test(inputObj.val())){
@@ -46,7 +48,7 @@ $(document).ready(function() {
             } else {
                var errorMsg = '用户名不能超过7个汉字或14个字符.';
                $("#userTips").replaceWith('<span class="formtips onError">' + errorMsg + '</span>');
-               return;
+
            }
         }
 
@@ -86,9 +88,7 @@ $(document).ready(function() {
         }
 
     }
-    function clear(){
 
-    }
 });
 
 

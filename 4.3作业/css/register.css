@@ -200,4 +200,5 @@ label{
     background: url(../img/reg_icons.png) -32px -24px no-repeat;
     left: 398px;
     cursor: pointer;
+    /*display: none;*/
 }
