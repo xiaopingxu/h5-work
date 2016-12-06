@@ -28,25 +28,26 @@
                         <div class="text-row">
                             <label for="username">用户名</label>
                             <input type="text" name="username" id="username" class="text-input" placeholder="请设置用户名">
-                            <span class="clear" onclick="clear()"></span>
+                            <span class="clear" onclick="$(this).prev().val('')"
+                           ></span>
                             <span id="userTips" class="ipt-tip">设置后不可更改<br>中英文均可，最长14个英文或7个汉字</span>
                         </div>
                         <div class="text-row">
                             <label for="phone">手机号</label>
                             <input type="text" name="phone" id="phone" class="text-input" placeholder="可用于登录和找回密码">
-                            <span class="clear" onclick="clear()"></span>
-                            <span id="phoneTips"></span>
+                            <span class="clear" onclick="$(this).prev().val('')"></span>
+                            <span id="phoneTips" class="ipt-tip">请输入中国大陆手机号其他用户不可见</span>
                         </div>
                         <div class="text-row">
                             <label for="pword">验证码</label>
                             <input type="text" name="pword" id="pword" class="text-input verify" placeholder="请输入验证码">
-                            <span class="clear" onclick="clear()"></span>
+                            <span class="clear" onclick="$(this).prev().val('')"></span>
                             <span id="passTips"></span>
                         </div>
                         <div class="text-row">
                             <label for="conpword">密码</label>
                             <input type="password" name="conpword" id="conpword" class="text-input verify" placeholder="请设置登录密码">
-                            <span class="clear" onclick="clear()"></span>
+                            <span class="clear" onclick="$(this).prev().val('')"></span>
                             <span id="conpassTips" class="ipt-tip">长度为6~14个符<br>支持数字,大小写字母和标点符号<br>不允许有空格</span>
                         </div>
                         <div id="protocol">
