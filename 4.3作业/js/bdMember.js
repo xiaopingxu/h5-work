@@ -9,25 +9,25 @@ $(document).ready(function() {
             $("#reTop").stop().fadeIn();
         } else {
             $("#reTop").stop().fadeOut();
-        }//������������һ��λ��ʱ�����ض�������ť����
+        }//返回顶部
 
         if (t >= 165) {
             $(".top_nav").addClass("top_navOn");
         } else {
             $(".top_nav").removeClass("top_navOn");
         }
-    });//�̶��ڶ����İٶ�������
+    });//固定在顶部的搜索框
 
     $(".s-msg").click(function(){
         $(".msg-box").toggle();
-    });//��Ϣ
+    });//消息
 
 
     $("#reTop").click(function () {
         $("body,html").stop().animate({scrollTop: 0}, 300)
-    });//���ض���
+    });//回到顶部
 
-    $(".myAttention").show();//�ҵĹ�עҳ����ʾ
+    $(".myAttention").show();//我的关注
     $(".tabMenu").each(function (index) {
         $(this).click(function () {
             $(".tabin").removeClass("tabin");
@@ -42,17 +42,17 @@ $(document).ready(function() {
                 $(".myAttention,.recommend").hide();
                 $(".novel").show();
             }
-        }); //��ǩ�л���ʾ��ͬ����
+        }); //我的关注-标签切换
     });
 
     $(".set").hover(function(){
         $(".setMenu").stop().slideToggle();
-    });//����
+    });//设置
 
     var more_pd = $(".more-pd");
     more_pd.hover(function () {
         $("#more_list").slideToggle(100);
-    });//��꾭�������˵�����-�����Ʒ
+    });////更多产品
     more_pd.mouseover(function () {
         $("#more").css({
             "color": "#333",
@@ -60,7 +60,7 @@ $(document).ready(function() {
             "border-left": "1px solid #e7e7e7",
             "border-bottom": "#f0f0f0 1px solid"
         })
-    });//���ͣ�������˵�-�����Ʒ-�ı���ʽ
+    });//更多产品
     more_pd.mouseout(function () {
         $("#more").css({
             "color": "#ffffff",
@@ -68,12 +68,12 @@ $(document).ready(function() {
             "border-left": "1px solid #e7e7e7",
             "border-bottom": "1px solid #398bfb"
         })
-    });//����ƿ������˵�-�����Ʒ-�ı���ʽ
+    });//更多产品
 
-    //����
+    //天气
     $.getScript('http://int.dpool.sina.com.cn/iplookup/iplookup.php?format=js', function(_result) {
-        //��ȡ�û�IP
-        //����IP�ҵ�����
+        //获取IP
+        //根据IP定位所在城市
         if (remote_ip_info.ret == '1') {
             $.ajax({
                 type: "GET",
@@ -83,9 +83,9 @@ $(document).ready(function() {
                     var res =  eval('('+msg+')');
                     //alert(msg);
                     if(res.status==1000){
-                        //����ɹ�
+                        //显示信息
                         $('#showCity').html(res.data.city);
-                        $('#showIcon').html(res.data.wendu+"��");
+                        $('#showIcon').html(res.data.wendu+"℃");
                         $('#showTemp').html(res.data.forecast[0].type);
                         $('#air').html(res.data.aqi);
                     }
@@ -101,7 +101,7 @@ $(document).ready(function() {
 });
 
 $(function(){
-   // ��������
+   // 换肤
     var changeSkin=$("#changeSkin");
     $(".s-skin").click(function(){
         changeSkin.slideDown();
@@ -112,7 +112,7 @@ $(function(){
 
 
     $(".skinMenu li").each(function (index) {
-        //��������
+        //换肤主题标签
         $(this).click(function () {
             $(".active-skinmenu").removeClass("active-skinmenu");
             $(this).addClass("active-skinmenu");
@@ -124,12 +124,12 @@ $(function(){
             } else if (index == 2) {
                 $(".skin-img").show();
             }
-        }); //���������ǩ�л���ʾ��ͬ����
+        }); //点击切换按钮
 
 
     });
 
-//Ƥ��Ч��Ԥ��
+//皮肤效果预览
     $(".item-img img").mousemove(function(){
         $(".bkgCentent").css({"background-position":"0 0"});
         $("#imgShow").attr("src",this.src)
@@ -137,25 +137,25 @@ $(function(){
         $(".bkgCentent").css({"background-position":"-275px 0"});
         $("#imgShow").attr("src","")
     });
-    //�������Ƥ��/��ʽ
+    //更换皮肤
     $(".imgList").click(function(){
         var bkgUrl=$(this).attr("src");
-        $("#wrapper").css({"background":"url("+bkgUrl+") no-repeat"});//��ҳ�����ı�
-        $("#s_lg_img").attr("src","img/logo_white.png");//logoͼƬ�ı�
+        $("#wrapper").css({"background":"url("+bkgUrl+") no-repeat"});//背景图片
+        $("#s_lg_img").attr("src","img/logo_white.png");//白色logo
         $(".bd_btn").css({
             "background-color":"#EDEDED",
             "border":"1px solid #CDC9C9",
             "color":"#000"
-        });//��ť��ʽ
+        });//搜索按钮样式
         $("#up-menu").css({
             "background-color":"rgba(140,140,140,.3)",
             "border-bottom":"none",
             "color":"#fff"
-        }); //������������ʽ
+        }); //顶部导航栏样式
 
         $(".s-icons a,.nav-box a").css({
             "color":"#fff"
-        }); //������������ɫ
+        }); //导航栏字体颜色
     })
 
 
