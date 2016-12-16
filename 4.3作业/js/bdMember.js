@@ -3,42 +3,56 @@
  */
 $(document).ready(function() {
     $(window).scroll(function () {
+        //
         var t = $(this).scrollTop();
         if (t > 50) {
             $("#reTop").stop().fadeIn();
         } else {
             $("#reTop").stop().fadeOut();
-        }//µ±¹ö¶¯Ìõµ½´ïÒ»¶¨Î»ÖÃÊ±¡®·µ»Ø¶¥²¿¡¯°´Å¥³öÏÖ
+        }//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½Î»ï¿½ï¿½Ê±ï¿½ï¿½ï¿½ï¿½ï¿½Ø¶ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Å¥ï¿½ï¿½ï¿½ï¿½
 
         if (t >= 165) {
             $(".top_nav").addClass("top_navOn");
         } else {
             $(".top_nav").removeClass("top_navOn");
         }
-    });//¹Ì¶¨ÔÚ¶¥²¿µÄ°Ù¶ÈËÑË÷¿ò
+    });//ï¿½Ì¶ï¿½ï¿½Ú¶ï¿½ï¿½ï¿½ï¿½Ä°Ù¶ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+
+    $(".s-msg").click(function(){
+        $(".msg-box").toggle();
+    });//ï¿½ï¿½Ï¢
+
 
     $("#reTop").click(function () {
         $("body,html").stop().animate({scrollTop: 0}, 300)
-    });//·µ»Ø¶¥²¿
+    });//ï¿½ï¿½ï¿½Ø¶ï¿½ï¿½ï¿½
 
-    $("#block_container").load("https://openapi.baidu.com/rest/2.0/hao123/saveOrder?access_token=xxx&format=xml");//ÎÒµÄ¹Ø×¢Ò³ÃæÏÔÊ¾
+    $(".myAttention").show();//ï¿½ÒµÄ¹ï¿½×¢Ò³ï¿½ï¿½ï¿½ï¿½Ê¾
     $(".tabMenu").each(function (index) {
         $(this).click(function () {
             $(".tabin").removeClass("tabin");
             $(this).addClass("tabin");
             if (index == 0) {
-                $("#block_container").load("http://www.weather.com.cn/data/sk/101110101.html");
+                $(".myAttention").show();
+                $(".recommend,.novel").hide();
             } else if (index == 1) {
-                $("#block_container").load("http://www.weather.com.cn/data/sk/101110101.html");
+                $(".myAttention,.novel").hide();
+                $(".recommend").show();
             } else if (index == 2) {
-                $("#block_container").load("http://www.weather.com.cn/data/sk/101110101.html");
+                $(".myAttention,.recommend").hide();
+                $(".novel").show();
             }
-        }); //±êÇ©ÇÐ»»ÏÔÊ¾²»Í¬ÄÚÈÝ
+        }); //ï¿½ï¿½Ç©ï¿½Ð»ï¿½ï¿½ï¿½Ê¾ï¿½ï¿½Í¬ï¿½ï¿½ï¿½ï¿½
     });
+
+    $(".set").hover(function(){
+        $(".setMenu").stop().slideToggle();
+    });//ï¿½ï¿½ï¿½ï¿½
+
     var more_pd = $(".more-pd");
     more_pd.hover(function () {
         $("#more_list").slideToggle(100);
-    });//Êó±ê¾­¹ýÏÂÀ­²Ëµ¥³öÏÖ-¸ü¶à²úÆ·
+    });//ï¿½ï¿½ê¾­ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ëµï¿½ï¿½ï¿½ï¿½ï¿½-ï¿½ï¿½ï¿½ï¿½ï¿½Æ·
     more_pd.mouseover(function () {
         $("#more").css({
             "color": "#333",
@@ -46,7 +60,7 @@ $(document).ready(function() {
             "border-left": "1px solid #e7e7e7",
             "border-bottom": "#f0f0f0 1px solid"
         })
-    });//Êó±êÍ£ÁôÏÂÀ­²Ëµ¥-¸ü¶à²úÆ·-¸Ä±äÑùÊ½
+    });//ï¿½ï¿½ï¿½Í£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ëµï¿½-ï¿½ï¿½ï¿½ï¿½ï¿½Æ·-ï¿½Ä±ï¿½ï¿½ï¿½Ê½
     more_pd.mouseout(function () {
         $("#more").css({
             "color": "#ffffff",
@@ -54,12 +68,12 @@ $(document).ready(function() {
             "border-left": "1px solid #e7e7e7",
             "border-bottom": "1px solid #398bfb"
         })
-    });//Êó±êÒÆ¿ªÏÂÀ­²Ëµ¥-¸ü¶à²úÆ·-¸Ä±äÑùÊ½
+    });//ï¿½ï¿½ï¿½ï¿½Æ¿ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ëµï¿½-ï¿½ï¿½ï¿½ï¿½ï¿½Æ·-ï¿½Ä±ï¿½ï¿½ï¿½Ê½
 
-    //ÌìÆø
+    //ï¿½ï¿½ï¿½ï¿½
     $.getScript('http://int.dpool.sina.com.cn/iplookup/iplookup.php?format=js', function(_result) {
-        //»ñÈ¡ÓÃ»§IP
-        //¸ù¾ÝIPÕÒµ½³ÇÊÐ
+        //ï¿½ï¿½È¡ï¿½Ã»ï¿½IP
+        //ï¿½ï¿½ï¿½ï¿½IPï¿½Òµï¿½ï¿½ï¿½ï¿½ï¿½
         if (remote_ip_info.ret == '1') {
             $.ajax({
                 type: "GET",
@@ -69,9 +83,9 @@ $(document).ready(function() {
                     var res =  eval('('+msg+')');
                     //alert(msg);
                     if(res.status==1000){
-                        //ÇëÇó³É¹¦
+                        //ï¿½ï¿½ï¿½ï¿½É¹ï¿½
                         $('#showCity').html(res.data.city);
-                        $('#showIcon').html(res.data.wendu+"¡æ");
+                        $('#showIcon').html(res.data.wendu+"ï¿½ï¿½");
                         $('#showTemp').html(res.data.forecast[0].type);
                         $('#air').html(res.data.aqi);
                     }
@@ -87,7 +101,7 @@ $(document).ready(function() {
 });
 
 $(function(){
-   // »»·ô¹¦ÄÜ
+   // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
     var changeSkin=$("#changeSkin");
     $(".s-skin").click(function(){
         changeSkin.slideDown();
@@ -98,7 +112,7 @@ $(function(){
 
 
     $(".skinMenu li").each(function (index) {
-        //»»·ôÖ÷Ìâ
+        //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
         $(this).click(function () {
             $(".active-skinmenu").removeClass("active-skinmenu");
             $(this).addClass("active-skinmenu");
@@ -110,28 +124,39 @@ $(function(){
             } else if (index == 2) {
                 $(".skin-img").show();
             }
-        }); //»»·ôÖ÷Ìâ±êÇ©ÇÐ»»ÏÔÊ¾²»Í¬ÄÚÈÝ
+        }); //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ç©ï¿½Ð»ï¿½ï¿½ï¿½Ê¾ï¿½ï¿½Í¬ï¿½ï¿½ï¿½ï¿½
 
-
-
-    //Æ¤·ôÐ§¹ûÔ¤ÀÀ
-        $(".item-img img").mousemove(function(){
-            $(".bkgCentent").css({"background-position":"0 0"});
-            $("#imgShow").attr("src",this.src)
-        }).mouseleave(function(){
-            $(".bkgCentent").css({"background-position":"-275px 0"});
-                $("#imgShow").attr("src","")
-        });
-
-    //µã»÷¸ü»»Æ¤·ô
-        $(".item-img img").click(function(){
-            var bkgUrl=this.src;
-            $("#wrapper").css({"background":"url('bkgUrl')"})
-        })
 
     });
 
+//Æ¤ï¿½ï¿½Ð§ï¿½ï¿½Ô¤ï¿½ï¿½
+    $(".item-img img").mousemove(function(){
+        $(".bkgCentent").css({"background-position":"0 0"});
+        $("#imgShow").attr("src",this.src)
+    }).mouseleave(function(){
+        $(".bkgCentent").css({"background-position":"-275px 0"});
+        $("#imgShow").attr("src","")
+    });
+    //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ¤ï¿½ï¿½/ï¿½ï¿½Ê½
+    $(".imgList").click(function(){
+        var bkgUrl=$(this).attr("src");
+        $("#wrapper").css({"background":"url("+bkgUrl+") no-repeat"});//ï¿½ï¿½Ò³ï¿½ï¿½ï¿½ï¿½ï¿½Ä±ï¿½
+        $("#s_lg_img").attr("src","img/logo_white.png");//logoÍ¼Æ¬ï¿½Ä±ï¿½
+        $(".bd_btn").css({
+            "background-color":"#EDEDED",
+            "border":"1px solid #CDC9C9",
+            "color":"#000"
+        });//ï¿½ï¿½Å¥ï¿½ï¿½Ê½
+        $("#up-menu").css({
+            "background-color":"rgba(140,140,140,.3)",
+            "border-bottom":"none",
+            "color":"#fff"
+        }); //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê½
 
+        $(".s-icons a,.nav-box a").css({
+            "color":"#fff"
+        }); //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½É«
+    })
 
 
     });

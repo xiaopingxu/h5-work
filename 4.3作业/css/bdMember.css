@@ -16,10 +16,13 @@ a{
 ul,li{
     list-style: none;
 }
+h2{
+    font-size: 20px;
+}
 #wrapper{
     width: 100%;
     height: 100%;
-    background:url("");
+    background:none;
 }
 #head{
     position: relative;
@@ -31,12 +34,19 @@ ul,li{
 .top_wap{
     width: 100%;
     height: 32px;
-    border-bottom: 1px solid #ebebeb;
+
 }
 #top_wap{
     position: absolute;
     min-width: 1000px;
     width: 100%;
+}
+.up-menu{
+    height: 33px;
+    width: 100%;
+    border-bottom: 1px solid #ebebeb;
+    background-color: rgba(255,255,255,.5)
+
 }
 .center-box{
     position: relative;
@@ -64,15 +74,15 @@ ul,li{
 .top_navOn{
     position: fixed;
     top:0
-}
+}/*固定在顶部的搜索框*/
 .top_fix{
     width: 805px;
     margin: 0 330px auto;
-}
+}/*固定在顶部的搜索框*/
 .weather-wrapper{
     float: left;
     height: 34px;
-}
+}/*天气*/
 .mod-weather{
     margin: 7px 0 0 15px;
     float: left;
@@ -99,14 +109,38 @@ ul,li{
 }
 .msg-box{
     position: absolute;
+    padding: 5px 20px 0 20px;
     top: 34px;
     font-size: 12px;
     color: #333;
     width: 278px;
     z-index: 999;
     text-align: left;
+    border: 1px solid #e3e3e3;
+    background-color: #fff;
     display: none;
 }/*消息框*/
+.msgContent{
+    height: 88px;
+    line-height: 88px;
+    margin: 0 20px;
+    border-bottom: 1px solid #ccc;
+
+}/*消息框*/
+.btnBox{
+    width:100%;
+    margin-left: 50px;
+    padding-top: 10px;
+    padding-bottom: 12px;
+}/*消息--按钮*/
+.btnBox button{
+    width: 82px;
+    height: 28px;
+    border: none;
+}/*消息--按钮*/
+.msg-Sbtn{
+    background-color: #5CACEE;
+}/*消息--按钮*/
 .nav-box{
     position: absolute;
     top: 0;
@@ -183,17 +217,17 @@ ul,li{
     overflow: hidden;
     text-shadow: none;
     line-height: 14px;
-}
+}/*更多产品下拉列表*/
 #all{
     padding-top: 15px;
     border-bottom: none;
-}
+}/*更多产品下拉列表--全部产品*/
 .more_menu a img{
     display: block;
     width: auto;
     margin: 10px auto 5px;
     cursor: pointer;
-}
+}/*更多产品下拉列表--图标*/
 .skinBox{
     position: fixed;
     display: none;
@@ -207,23 +241,23 @@ ul,li{
     width: 100%;
     height: 46px;
     border-bottom: 1px solid #CFCFCF;
-}
+}/*换肤 导航条*/
 .skinBody{
     width: 100%;
     height: 240px;
     border-bottom:2px solid#CFCFCF;
-}
+}/*皮肤显示区*/
 .skinNav{
     width: 911px;
     overflow: hidden;
     margin: 0 auto;
-}
+}/*皮肤主题*/
 .skinMenu{
     float: left;
 }
 .active-skinmenu{
     background-color: #389cff;
-}
+}/*被选中的皮肤主题*/
 .skinMenu ul li{
     list-style: none;
     float: left;
@@ -240,7 +274,7 @@ ul,li{
     width: 340px;
     text-align: left;
 
-}
+}/*皮肤工具条*/
 .bg-alphabarTittlie{
     font-size: 13px;
     line-height: 46px;
@@ -256,7 +290,7 @@ ul,li{
 
 #clearSkin:hover{
     color: #0079f5;
-}
+}/*清除皮肤*/
 .skin-imgBox{
     margin: 0 auto;
     width: 911px;
@@ -355,6 +389,10 @@ ul,li{
     overflow: hidden;
     display: inline-block;
 }
+#imgShow{
+    width: 260px;
+    height: 163px;
+}
 .bkgCentent{
     top: 0;
     right: 0;
@@ -366,6 +404,38 @@ ul,li{
     z-index: 99999;
     position: relative;
 }
+.set{
+    display: inline-block;
+    position: relative;
+    height:100px;
+    margin-left: 19px;
+    line-height: 32px;
+    color: #555;
+}/*设置*/
+.set a{
+    display: inline-block;
+    line-height: 32px;
+    color: #555;
+    text-decoration: underline;
+    outline: none;
+    text-shadow: none;
+}/*设置*/
+
+.set ul{
+    width: 70px;
+    border: 1px solid #909090;
+    text-align: center;
+    display: none;
+    position: absolute;
+    margin-left: -20px;
+}/*设置*/
+.set ul li{
+    line-height: 28px;
+    cursor: pointer;
+}/*设置*/
+.set ul li:hover{
+    background-color:#38f;
+}/*设置*/
 #head_wrapper{
     position: relative;
     height: 38.2%;
@@ -452,13 +522,15 @@ ul,li{
     _width: 1000px;
     margin: 0 auto;
     position: relative;
-}
+}/*主要区域*/
 .mainBox{
     position: relative;
     width: 895px;
     margin: 0 auto;
     z-index: 2;
-}
+    background-color: #fff;
+    opacity:0.9;
+}/*主要区域*/
 
 .menu_container{
     position: relative;
@@ -517,7 +589,6 @@ ul,li{
     height: 100%;
     margin-top: 13px;
     margin-bottom: 10px;
-    background-color:#cccccc;
     overflow: hidden;
 }
 .menuicon{
@@ -549,10 +620,213 @@ ul,li{
     line-height: 25px;
     text-align: center;
     background: url("../img/topfed_c531aae6.png") no-repeat -1px -10px;";
-}
+}/*返回顶部*/
 .totopIcon:hover{
     background: url("../img/totophover.png") no-repeat ;";
     width: 35px;
     height: 35px;
     margin: 0 auto;
+}/*返回顶部*/
+.myAttention{
+    display: none;
+    width:845px;
+    margin: 0 auto;
+}/*我的关注-显示内容*/
+.myBar{
+    width: 100%;
+    height: auto;
+    text-align: left;
+    font-size: 14px;
+    padding-bottom: 6px;
+    line-height: 30px;
+}/*我的导航*/
+
+.navtopBox{
+    width: 100%;
+    height: 30px;
+    border-bottom: 1px solid #f0f0f0;
 }
+.mineTittlie{
+    float: left;
+    line-height: 30px;
+    height: 30px;
+    padding-left: 20px;
+    font-weight: bold;
+    margin-right: 4px;
+    background: url("../img/Triangle_Right.ico") no-repeat left center;
+
+}
+.navbarTools{
+    float: right;
+}
+.navbarTools a{
+    vertical-align: middle;
+    cursor: pointer;
+    margin-left: 16px;
+    font-size: 13px;
+}
+.navBlank{
+    position: relative;
+    height: 50px;
+    width: 100%;
+    background: url("../img/nav_blank.png") no-repeat 254px 23px ;
+}
+.novBlank{
+    position: relative;
+    height: 50px;
+    width: 100%;
+    background: url("../img/novel_blank.png") no-repeat 254px 23px ;
+}
+.nub{
+    float: left;
+    line-height: 30px;
+    color: #666;
+    font-size: 14px;
+}
+.custom{
+    float: left;
+    padding-left: 20px;
+    background: url("../img/plus.ico") no-repeat 0 0;
+}/*自定义*/
+.recommend{
+    width:845px;
+    margin: 0 auto;
+    position: relative;
+    display: none;
+}/*推荐*/
+.recommendLeft{
+    width: 538px;
+    height: 100%;
+    position: relative;
+}/*推荐--左*/
+.r-tipBox{
+    width: 100%;
+    font-size: 13px;
+    color: #999;
+}
+.r_lineTip{
+    height: 0;
+    width: 172px;
+    font-size: 0;
+    border-bottom: 1px solid #e2e2e2;
+    margin-top: 21px;
+    display: inline-block;
+}
+.r_centent{
+    width: 100%;
+}
+.r_centent div{
+    width: 100%;
+    height: 160px;
+    padding-top: 20px;
+    border-bottom: 1px solid #909090;
+    word-wrap:break-word;
+    word-break:break-all;
+    text-align: left;
+    position: relative;
+}
+.r_centent img{
+    width: 179px;
+    height: 119px;
+    cursor: auto;
+    border: 0;
+    float: left;
+}
+.r_centent a{
+    height: 140px;
+    font-size: 18px;
+    color:#666;
+    font-weight: 700;
+}
+.r_centent a:hover{
+    color:#4876FF;
+    text-decoration: underline;
+}
+.r_centent span{
+    font-size: 12px;
+    color: #909090;
+    bottom: 3px;
+    display: block;
+    position: absolute;
+}
+.recommendRight{
+    position: absolute;
+    top: 9px;
+    right:0;
+    width: 300px;
+    height: 300px;
+    background-color: #fff;
+}
+.r_tittle{
+    height: 35px;
+}
+.r_tittle h2{
+    float: left;
+}
+.r_tittle span{
+    float: right;
+    padding-left: 20px;
+    background:url("../img/new_index_icon.ico") no-repeat;
+}
+.rr_centent ul{
+    width: 100%;
+}
+.rr_centent ul li{
+    width: 135px;
+    height: 30px;
+    margin-right:10px;
+    display: inline-block;
+}
+.rr_centent ul li a{
+    font-size: 14px;
+    line-height: 30px;
+    cursor: pointer;
+}
+.rr_centent ul li a:hover{
+    text-decoration: underline;
+    color: #0079f5;
+}
+.novel{
+    width:890px;
+    margin: 0 auto;
+    position: relative;
+    display: none;
+}/*小说*/
+.novelMenu{
+    width: 273px;
+    height: 151px;
+    border-top: 1px solid #eee;
+    float: left;
+    background: #f8f8f8;
+    margin-left: 11px;
+    position: relative;
+}/*小说列表*/
+.novel-pic{
+    float: left;
+    position: relative;
+    padding: 9px 15px 12px 10px;
+}/*小说图片*/
+.novel-pic img{
+    width: 105px;
+    height: 130px;
+}/*小说图片*/
+.infor{
+    float: left;
+    width: 143px;
+    text-align: left;
+    padding-top: 25px;
+}/*小说详细信息*/
+.infor a{
+    color: #000;
+    text-decoration: none;
+}/*小说*/
+.infor a:hover{
+    color: #0079f5;
+    text-decoration: underline;
+}/*小说信息*/
+.infor p{
+    font-size: 12px;
+    height: 24px;
+    line-height: 24px;
+    color: #666;
+}/*小说信息*/
