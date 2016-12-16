@@ -3,31 +3,45 @@
  */
 $(document).ready(function() {
     $(window).scroll(function () {
-        //
+        //¹ö¶¯ÊÂ¼ş
         var t = $(this).scrollTop();
         if (t > 50) {
             $("#reTop").stop().fadeIn();
         } else {
             $("#reTop").stop().fadeOut();
-        }//è¿”å›é¡¶éƒ¨
+        }//·µ»Ø¶¥²¿
 
         if (t >= 165) {
             $(".top_nav").addClass("top_navOn");
         } else {
             $(".top_nav").removeClass("top_navOn");
-        }
-    });//å›ºå®šåœ¨é¡¶éƒ¨çš„æœç´¢æ¡†
+        }//¹Ì¶¨ÔÚ¶¥²¿µÄËÑË÷¿ò
+
+        if(t>=295){
+            $(".recommendRight").css({
+                "position":" fixed",
+                "top":"89px",
+                "right":"369px"
+            })
+        }else{
+            $(".recommendRight").css({
+                "position":" absolute",
+                "top":"9px",
+                "right":"0"
+            })
+        }//ÊµÊ±ÈÈµã
+    });
 
     $(".s-msg").click(function(){
         $(".msg-box").toggle();
-    });//æ¶ˆæ¯
+    });//ÏûÏ¢
 
 
     $("#reTop").click(function () {
         $("body,html").stop().animate({scrollTop: 0}, 300)
-    });//å›åˆ°é¡¶éƒ¨
+    });//»Øµ½¶¥²¿
 
-    $(".myAttention").show();//æˆ‘çš„å…³æ³¨
+    $(".myAttention").show();//ÎÒµÄ¹Ø×¢
     $(".tabMenu").each(function (index) {
         $(this).click(function () {
             $(".tabin").removeClass("tabin");
@@ -42,17 +56,17 @@ $(document).ready(function() {
                 $(".myAttention,.recommend").hide();
                 $(".novel").show();
             }
-        }); //æˆ‘çš„å…³æ³¨-æ ‡ç­¾åˆ‡æ¢
+        }); //ÎÒµÄ¹Ø×¢-±êÇ©ÇĞ»»
     });
 
     $(".set").hover(function(){
         $(".setMenu").stop().slideToggle();
-    });//è®¾ç½®
+    });//ÉèÖÃ
 
     var more_pd = $(".more-pd");
     more_pd.hover(function () {
         $("#more_list").slideToggle(100);
-    });////æ›´å¤šäº§å“
+    });////¸ü¶à²úÆ·
     more_pd.mouseover(function () {
         $("#more").css({
             "color": "#333",
@@ -60,7 +74,7 @@ $(document).ready(function() {
             "border-left": "1px solid #e7e7e7",
             "border-bottom": "#f0f0f0 1px solid"
         })
-    });//æ›´å¤šäº§å“
+    });//¸ü¶à²úÆ·
     more_pd.mouseout(function () {
         $("#more").css({
             "color": "#ffffff",
@@ -68,12 +82,12 @@ $(document).ready(function() {
             "border-left": "1px solid #e7e7e7",
             "border-bottom": "1px solid #398bfb"
         })
-    });//æ›´å¤šäº§å“
+    });//¸ü¶à²úÆ·
 
-    //å¤©æ°”
+    //ÌìÆø
     $.getScript('http://int.dpool.sina.com.cn/iplookup/iplookup.php?format=js', function(_result) {
-        //è·å–IP
-        //æ ¹æ®IPå®šä½æ‰€åœ¨åŸå¸‚
+        //»ñÈ¡IP
+        //¸ù¾İIP¶¨Î»ËùÔÚ³ÇÊĞ
         if (remote_ip_info.ret == '1') {
             $.ajax({
                 type: "GET",
@@ -83,9 +97,9 @@ $(document).ready(function() {
                     var res =  eval('('+msg+')');
                     //alert(msg);
                     if(res.status==1000){
-                        //æ˜¾ç¤ºä¿¡æ¯
+                        //ÏÔÊ¾ĞÅÏ¢
                         $('#showCity').html(res.data.city);
-                        $('#showIcon').html(res.data.wendu+"â„ƒ");
+                        $('#showIcon').html(res.data.wendu+"¡æ");
                         $('#showTemp').html(res.data.forecast[0].type);
                         $('#air').html(res.data.aqi);
                     }
@@ -99,9 +113,9 @@ $(document).ready(function() {
 
 
 });
-
-$(function(){
-   // æ¢è‚¤
+// »»·ô
+$(function(skin){
+   // »»·ô
     var changeSkin=$("#changeSkin");
     $(".s-skin").click(function(){
         changeSkin.slideDown();
@@ -112,7 +126,7 @@ $(function(){
 
 
     $(".skinMenu li").each(function (index) {
-        //æ¢è‚¤ä¸»é¢˜æ ‡ç­¾
+        //»»·ôÖ÷Ìâ±êÇ©
         $(this).click(function () {
             $(".active-skinmenu").removeClass("active-skinmenu");
             $(this).addClass("active-skinmenu");
@@ -124,12 +138,12 @@ $(function(){
             } else if (index == 2) {
                 $(".skin-img").show();
             }
-        }); //ç‚¹å‡»åˆ‡æ¢æŒ‰é’®
+        }); //µã»÷ÇĞ»»°´Å¥
 
 
     });
 
-//çš®è‚¤æ•ˆæœé¢„è§ˆ
+//Æ¤·ôĞ§¹ûÔ¤ÀÀ
     $(".item-img img").mousemove(function(){
         $(".bkgCentent").css({"background-position":"0 0"});
         $("#imgShow").attr("src",this.src)
@@ -137,26 +151,37 @@ $(function(){
         $(".bkgCentent").css({"background-position":"-275px 0"});
         $("#imgShow").attr("src","")
     });
-    //æ›´æ¢çš®è‚¤
+    //¸ü»»Æ¤·ô
     $(".imgList").click(function(){
         var bkgUrl=$(this).attr("src");
-        $("#wrapper").css({"background":"url("+bkgUrl+") no-repeat"});//èƒŒæ™¯å›¾ç‰‡
-        $("#s_lg_img").attr("src","img/logo_white.png");//ç™½è‰²logo
+        $("#wrapper").css({"background":"url("+bkgUrl+") no-repeat"});//±³¾°Í¼Æ¬
+        $("#s_lg_img").attr("src","img/logo_white.png");//°×É«logo
         $(".bd_btn").css({
             "background-color":"#EDEDED",
             "border":"1px solid #CDC9C9",
             "color":"#000"
-        });//æœç´¢æŒ‰é’®æ ·å¼
+        });//ËÑË÷°´Å¥ÑùÊ½
         $("#up-menu").css({
             "background-color":"rgba(140,140,140,.3)",
             "border-bottom":"none",
             "color":"#fff"
-        }); //é¡¶éƒ¨å¯¼èˆªæ æ ·å¼
+        }); //¶¥²¿µ¼º½À¸ÑùÊ½
 
         $(".s-icons a,.nav-box a").css({
             "color":"#fff"
-        }); //å¯¼èˆªæ å­—ä½“é¢œè‰²
+        }); //µ¼º½À¸×ÖÌåÑÕÉ«
     })
 
 
     });
+
+//ÎÒµÄ¹Ø×¢
+ $(function(attention){
+    //Êó±êÒÆÈëÏÔÊ¾Ìí¼ÓµÈ¹¤¾ßÀ¸
+    $(".navtopBox").mousemove(function(){
+        $(this).children(".navbarTools").show();
+    }).mouseleave (function(){
+        $(this).children(".navbarTools").hide();
+    })
+
+ });
