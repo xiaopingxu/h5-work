@@ -876,7 +876,8 @@ dl,dd{
     width: 35px;
     height: 35px;
     position: fixed;
-    right: 200px;
+    left:50%;
+    margin-left: 500px;
     bottom: 100px;
     display: none;
 }/*回到顶部*/
@@ -888,4 +889,5 @@ dl,dd{
 }/*回到顶部*/
 .totopIcon:hover{
     background: url("../img/icon-toTop.png")no-repeat;
+
 }/*回到顶部*/

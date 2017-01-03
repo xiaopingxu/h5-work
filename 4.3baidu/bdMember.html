@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>百度一下，你就知道</title>
+    <script src="./js/jquery-3.1.0.min.js" type="text/javascript"></script>
+    <script src="./js/bdMember.js" type="text/javascript" charset="GBK"></script>
+    <link href="./css/bdMember.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<div id="wrapper">
+    <div id="head">
+        <div id="top_wap" class="top_wap" style="left:0">
+            <div class="top_nav" >
+                <!-- 固定在顶部的搜索框-->
+                <div class="top_fix">
+                    <a id="result_logo" href="#">
+                        <img src="./img/logo_top.png" alt="到百度首页" title="到百度首页">
+                    </a>
+                    <form  action="#" method="post" id="formTop" class="fm">
+                        <div class="bdsug">
+                            <span class="soutu"></span>
+                            <input type="text"  class="search" name="search" id="sousuo1" ><input type="submit" name="button"  value="百度一下" class="bd_btn" >
+                        </div>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+        <div id="up-menu" class="up-menu">
+            <!-- 天气-->
+            <div class="weather-wrapper">
+                <div id="mod-weather" class="mod-weather">
+                    <span id="showCity"></span>
+                    <span id="showIcon"></span>
+                    <span id="showTemp"></span>
+                    <span id="air"></span>
+                    <span>|</span>
+                </div>
+            </div>
+
+            <!-- 工具-->
+            <div class="s-icons" id="s-icons">
+                <a href="http://vip.baidu.com/act/xuyuan" title="宝箱" class="treasure">宝箱</a>
+                <a href="javascript:;" class="s-skin" title="换肤"> 换肤</a>
+                <a href="#" class="s-msg" title="消息"> 消息</a>
+                <div class="msg-box">
+                    <div class="msgContent">
+                        <p style="text-align: center">您目前没有新消息</p>
+                    </div>
+                    <div class="btnBox">
+                        <button value="×清空消息" class="msg-Cbtn">×清空消息</button>
+                        <button value="消息设置" class="msg-Sbtn">消息设置</button>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- 导航-->
+            <div class="nav-box" id="nav-box">
+                <a href="http://www.nuomi.com/" target="blank" class="a1">糯米</a>
+
+                <a href="http://news.baidu.com/" target="blank" class="a1">新闻 </a>
+
+                <a href="http://www.hao123.com/" target="blank" class="a1">hao123</a>
+
+                <a href="http://map.baidu.com/" target="blank" class="a1">地图</a>
+
+                <a href="http://v.baidu.com/" target="blank" class="a1">视频</a>
+
+                <a href="http://tieba.baidu.com/" target="blank" class="a1">贴吧</a>
+                <a href="#" target="blank" id="login">Admin</a>
+                <div class="set">
+                    <a href="#" target="blank" id="set">设置</a>
+                    <ul class="setMenu">
+                        <li>搜索设置</li>
+                        <li>高级搜索</li>
+                        <li>关闭预测</li>
+                        <li>搜索历史</li>
+                    </ul>
+
+                </div>
+
+                <div class="more-pd">
+                    <a href="#" target="blank" id="more">更多产品</a>
+                    <div id="more_list" class="more_menu"><!--更多产品列表-->
+                        <a href="http://music.baidu.com/" id="music">
+                            <img src="./img/yin.png" >音乐
+                        </a>
+                        <a href="http://image.baidu.com/" id="pic">
+                            <img src="./img/pic.png">图片
+                        </a>
+                        <a href="http://zhidao.baidu.com/" id="know">
+                            <img src="./img/know.png">知道
+                        </a>
+                        <a href="http://wenku.baidu.com/" id="wenku">
+                            <img src="./img/library.png">文库
+                        </a>
+                        <a href="http://top.baidu.com/" id="baidutop">
+                            <img src="./img/top.png">风云榜
+                        </a>
+                        <a href="http://e.baidu.com/?refer=888&subsite=sh" id="tuiguang">
+                            <img src="./img/tui.png">百度推广
+                        </a>
+                        <a href="https://www.baidu.com/more/" id="all">全部产品>>></a>
+                    </div>
+                </div>
+            </div>
+            <!-- 换肤功能-->
+            <div class="skinBox" id="changeSkin" style="opacity: 1;top:0">
+                <div class="skinHand">
+                    <div class="skinNav">
+                        <div class="skinMenu">
+                            <ul>
+                                <li class="active-skinmenu">热门</li>
+                                <li>游戏</li>
+                                <li>卡通</li>
+                                <li>女神降临</li>
+                                <li>明星</li>
+                                <li>风景</li>
+                                <li>简约</li>
+                                <li>小清新</li>
+                                <li>|</li>
+                                <li>自定义</li>
+                                <li>最近使用</li>
+                            </ul>
+                        </div>
+                        <div class="skinTool">
+                            <div style="display: inline" >
+                                <span class="bg-alphabarTittlie">背景透明度</span>
+                                <img src="./img/bg-phra.png">
+                                <span class="bg-alphabarTittlie" id="clearSkin">×不使用换肤</span>
+                            </div>
+                            <span class="bg-alphabarTittlie" id="skin-up" style="color:#0079f5">收起</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="skinBody">
+                    <div class="skin-imgBox">
+                        <div class="skin-img">
+                            <ul>
+                                <li class="item-img big-img pos-0">
+                                    <img src="./img/skin/832.jpg" class="item-img-bg imgList">
+                                </li>
+                                <li class="item-img pos-1">
+                                    <img src="./img/skin/831.jpg" class="item imgList">
+                                </li>
+                                <li class="item-img pos-2">
+                                    <img src="./img/skin/34.jpg" class="item imgList">
+                                </li>
+                                <li class="item-img pos-3">
+                                    <img src="./img/skin/111.jpg" class="item imgList">
+                                </li>
+                                <li class="item-img pos-4">
+                                    <img src="./img/skin/412.jpg" class="item imgList">
+                                </li>
+                                <li class="item-img pos-5">
+                                    <img src="./img/skin/422.jpg" class="item imgList">
+                                </li>
+                                <li class="item-img pos-6">
+                                    <img src="./img/skin/437.jpg" class="item imgList">
+                                </li>
+                                <li class="item-img pos-7">
+                                    <img src="./img/skin/438.jpg" class="item imgList">
+                                </li>
+                                <li class="item-img big-img pos-8">
+                                    <img src="./img/skin/449.jpg" class="item-img-bg imgList">
+                                </li>
+                                <li class="item-img pos-9">
+                                    <img src="./img/skin/256.jpg" class="item imgList">
+                                </li>
+                                <li class="item-img pos-10">
+                                    <img src="./img/skin/451.jpg" class="item imgList">
+                                </li>
+                                <li class="item-img pos-11">
+                                    <img src="./img/skin/749.jpg" class="item imgList">
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="skin-view">
+                            <div class="bkg">
+                                <img src="" id="imgShow">
+                            </div>
+                            <div class="bkgCentent"></div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div >
+
+        <div id="head_wrapper">
+            <div class="s-form">
+                <div id="lg" class="s-p-top">
+                    <img id="s_lg_img" src="./img/bd_logo1.png" style="width: 270px;height: 129px">
+                </div>
+                <form  action="#" method="post" id="form" class="fm">
+                    <div class="bdsug">
+                        <span class="soutu"></span>
+                        <input type="text"  class="search" name="search" id="sousuo" ><input type="submit" name="button"  value="百度一下" class="bd_btn" >
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div id="main-wap" class="mainWap" style="padding-top:0">
+            <div id="main" class="mainBox">
+                <div class="menu_container" id="menuContainer">
+                    <div id="tabnav">
+                        <span class="mine active"></span>
+                        <div class="tabin tabMenu" id="guanzhu">我的关注</div>
+                        <div class="tabMenu">推荐</div>
+                        <div class="tabMenu">小说</div>
+                        <div class="menuicon" id="menuiconSet"></div>
+                    </div>
+                </div>
+                <div id="cterContent" class="cter-content">
+                    <div id="block_container" class="blk">
+                        <!-- 我的关注-->
+                        <div class="myAttention">
+                            <!-- 我的导航-->
+                            <div class="myBar">
+                                <div class="navtopBox">
+                                    <a class="mineTittlie" id="mynav">我的导航</a><span class="nub">(0)</span>
+                                    <div class="navbarTools" id="mynavTool">
+                                        <a class="add">添加</a>
+                                        <a>编辑</a>
+                                        <a>□分类显示</a>
+                                        <a>□返利模式</a>
+                                        <a>置顶</a>
+                                    </div>
+                                </div>
+                                <div class="navBlank">
+
+                                </div>
+                                <div class="addContent">
+                                    <div class="addcontentHand">添加网址</div>
+                                    <div class="addcontentBottom">
+                                        <input type="text" placeholder="名称" id="su-name">
+                                        <input type="button" value="添加网址" id="su-btn">
+                                    </div>
+                                </div>
+
+
+                            </div>
+                            <!-- 我的小说-->
+                            <div class="myBar">
+                                <div class="navtopBox">
+                                    <a class="mineTittlie" id="mynovel">我的小说</a><span class="nub">(0)</span>
+                                    <div class="navbarTools" id="mynovelTool">
+                                        <a class="add">添加</a>
+                                        <a>置顶</a>
+                                    </div>
+                                </div>
+                                <div class="novBlank">
+
+                                </div>
+                            </div>
+                            <!-- 自定义-->
+                            <div>
+                                <a class="custom">自定义</a>
+                            </div>
+                        </div>
+
+                        <!--推荐-->
+                        <div class="recommend">
+                            <!--推荐-->
+                            <div class="recommendLeft">
+                                <div class="r-tipBox">
+                                    <div class="r_lineTip"></div>
+                                    <span>以下信息根据您的兴趣推荐</span>
+                                    <div class="r_lineTip"></div>
+                                </div>
+                                <div class="r_centent" >
+                                    <div>
+                                        <img src="./img/recommend/1.png">
+                                        <a href="#">BTV：春运十大最难抢票城市与最难抢票日期出炉</a>
+                                        <span>搜狐网</span>
+                                    </div>
+                                    <div>
+                                        <img src="./img/recommend/10.JPEG">
+                                        <a href="#">张翰发文称：这200万给网友买礼物 不许再黑我宝宝</a>
+                                        <span>搜狐网</span>
+                                    </div>
+                                    <div>
+                                        <img src="./img/recommend/11.jpg">
+                                        <a href="#">navicat for mysql注册码，各种版本都有</a>
+                                        <span>搜狐网</span>
+                                    </div>
+                                    <div>
+                                        <a href="#">黄晓明为爱妻开奶昔店，一杯奶茶比郑爽的炸鸡还贵</a>
+                                        <img src="./img/recommend/7.JPEG">
+                                        <img src="./img/recommend/8.JPEG">
+                                        <img src="./img/recommend/9.JPEG">
+                                        <span>搜狐网</span>
+                                    </div>
+                                    <div>
+                                        <a href="#">明星婚礼巨额礼金大揭秘 千年伴郎胡歌入不敷出</a>
+                                        <img src="./img/recommend/5.JPG">
+                                        <img src="./img/recommend/6.JPG">
+                                        <img src="./img/recommend/7.JPG">
+                                        <span>搜狐网</span>
+                                    </div>
+                                    <div>
+                                        <a>心理测试：第一眼看到什么动物，就说明你是什么人！</a>
+                                        <img src="./img/recommend/2.JPEG">
+                                        <img src="./img/recommend/3.JPEG">
+                                        <img src="./img/recommend/4.JPEG">
+                                        <span>搜狐网</span>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="recommendRight">
+                                <div class="r_tittle">
+                                    <h2>实时热点</h2>
+                                    <span>换一换</span>
+                                </div>
+                                <div class="rr_centent">
+                                    <ul>
+                                        <li>
+                                            <a>港元再创8年新高</a>
+                                        </li>
+                                        <li>
+                                            <a>韩寒新片杀青</a>
+                                        </li>
+                                        <li>
+                                            <a>天降酸奶瓶砸人</a>
+                                        </li>
+                                        <li>
+                                            <a>多多玩自拍</a>
+                                        </li>
+                                        <li>
+                                            <a>韩媒称中国货船逃逸</a>
+                                        </li>
+                                        <li>
+                                            <a>张歆艺为就医道歉</a>
+                                        </li>
+                                        <li>
+                                            <a>田馥甄被罚15万</a>
+                                        </li>
+                                        <li>
+                                            <a>etc联名卡盗刷</a>
+                                        </li>
+                                        <li>
+                                            <a>黄轩被爆恋情</a>
+                                        </li>
+                                        <li>
+                                            <a>李连杰面容衰老</a>
+                                        </li>
+                                        <li>
+                                            <a>误得60万美元</a>
+                                        </li>
+                                        <li>
+                                            <a>行窃4年获利百万</a>
+                                        </li>
+                                        <li>
+                                            <a>8人殴辱17岁少女</a>
+                                        </li>
+                                        <li>
+                                            <a>萧淑慎被爆当小三</a>
+                                        </li>
+                                        <li>
+                                            <a>女警花打吊瓶工作</a>
+                                        </li>
+                                        <li>
+                                            <a>国台办回应特普朗</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <!--小说-->
+                        <div class="novel">
+                            <!-- 小说-->
+                            <div class="novelMenu">
+                                <div  class="novel-pic">
+                                    <a href="#">
+                                        <img src="./img/novel/1.jpg">
+                                    </a>
+                                </div>
+
+                                <div class="infor">
+                                    <a href="#">校花的贴身高手</a>
+                                    <p>作者：鱼人二代</p>
+                                    <p>状态：连载中</p>
+                                    <p>起点中文网&nbsp;更多搜索</p>
+                                </div>
+                            </div>
+                            <div class="novelMenu">
+                                <div  class="novel-pic">
+                                    <a href="#">
+                                        <img src="./img/novel/2.jpg">
+                                    </a>
+                                </div>
+
+                                <div class="infor">
+                                    <a href="#">完美世界</a>
+                                    <p>作者：辰东</p>
+                                    <p>状态：连载中</p>
+                                    <p>起点中文网&nbsp;更多搜索</p>
+                                </div>
+                            </div>
+                            <div class="novelMenu">
+                                <div  class="novel-pic">
+                                    <a href="#">
+                                        <img src="./img/novel/3.jpg">
+                                    </a>
+                                </div>
+
+                                <div class="infor">
+                                    <a href="#">莽荒记</a>
+                                    <p>作者：我吃西红柿</p>
+                                    <p>状态：已完结</p>
+                                    <p>起点中文网&nbsp;更多搜索</p>
+                                </div>
+                            </div>
+                            <div class="novelMenu">
+                                <div  class="novel-pic">
+                                    <a href="#">
+                                        <img src="./img/novel/4.jpg">
+                                    </a>
+                                </div>
+
+                                <div class="infor">
+                                    <a href="#">大主宰</a>
+                                    <p>作者：天蚕土豆</p>
+                                    <p>状态：连载中</p>
+                                    <p>起点中文网&nbsp;更多搜索</p>
+                                </div>
+                            </div>
+                            <div class="novelMenu">
+                                <div  class="novel-pic">
+                                    <a href="#">
+                                        <img src="./img/novel/5.jpg">
+                                    </a>
+                                </div>
+
+                                <div class="infor">
+                                    <a href="#">我欲封天</a>
+                                    <p>作者：耳根</p>
+                                    <p>状态：连载中</p>
+                                    <p>起点中文网&nbsp;更多搜索</p>
+                                </div>
+                            </div>
+                            <div class="novelMenu">
+                                <div  class="novel-pic">
+                                    <a href="#">
+                                        <img src="./img/novel/6.jpg">
+                                    </a>
+                                </div>
+
+                                <div class="infor">
+                                    <a href="#">星战风暴</a>
+                                    <p>作者：骷髅精灵</p>
+                                    <p>状态：连载中</p>
+                                    <p>起点中文网&nbsp;更多搜索</p>
+                                </div>
+                            </div>
+                            <div class="novelMenu">
+                                <div  class="novel-pic">
+                                    <a href="#">
+                                        <img src="./img/novel/1.jpg">
+                                    </a>
+                                </div>
+
+                                <div class="infor">
+                                    <a href="#">校花的贴身高手</a>
+                                    <p>作者：鱼人二代</p>
+                                    <p>状态：连载中</p>
+                                    <p>起点中文网&nbsp;更多搜索</p>
+                                </div>
+                            </div>
+                            <div class="novelMenu">
+                                <div  class="novel-pic">
+                                    <a href="#">
+                                        <img src="./img/novel/2.jpg">
+                                    </a>
+                                </div>
+
+                                <div class="infor">
+                                    <a href="#">校花的贴身高手</a>
+                                    <p>作者：鱼人二代</p>
+                                    <p>状态：连载中</p>
+                                    <p>起点中文网&nbsp;更多搜索</p>
+                                </div>
+                            </div>
+                            <div class="novelMenu">
+                                <div  class="novel-pic">
+                                    <a href="#">
+                                        <img src="./img/novel/3.jpg">
+                                    </a>
+                                </div>
+
+                                <div class="infor">
+                                    <a href="#">校花的贴身高手</a>
+                                    <p>作者：鱼人二代</p>
+                                    <p>状态：连载中</p>
+                                    <p>起点中文网&nbsp;更多搜索</p>
+                                </div>
+                            </div>
+
+                            <div class="novelMenu">
+                                <div  class="novel-pic">
+                                    <a href="#">
+                                        <img src="./img/novel/4.jpg">
+                                    </a>
+                                </div>
+
+                                <div class="infor">
+                                    <a href="#">校花的贴身高手</a>
+                                    <p>作者：鱼人二代</p>
+                                    <p>状态：连载中</p>
+                                    <p>起点中文网&nbsp;更多搜索</p>
+                                </div>
+                            </div>
+
+                            <div class="novelMenu">
+                                <div  class="novel-pic">
+                                    <a href="#">
+                                        <img src="./img/novel/5.jpg">
+                                    </a>
+                                </div>
+
+                                <div class="infor">
+                                    <a href="#">校花的贴身高手</a>
+                                    <p>作者：鱼人二代</p>
+                                    <p>状态：连载中</p>
+                                    <p>起点中文网&nbsp;更多搜索</p>
+                                </div>
+                            </div>
+
+                            <div class="novelMenu">
+                                <div  class="novel-pic">
+                                    <a href="#">
+                                        <img src="./img/novel/6.jpg">
+                                    </a>
+                                </div>
+
+                                <div class="infor">
+                                    <a href="#">校花的贴身高手</a>
+                                    <p>作者：鱼人二代</p>
+                                    <p>状态：连载中</p>
+                                    <p>起点中文网&nbsp;更多搜索</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="toTop" id="reTop">
+                <a class="totopIcon" id="totopIcon" href="javascript:;"></a>
+            </div>
+        </div>
+    </div>
+    <!-- 底部-->
+    <div class="foot">
+        <a href="https://www.baidu.com/cache/sethelp/help.html" style="color: grey">把百度设为主页</a>&#160&#160
+        <small> &#169 2016 Baidu</small>
+        <a href="https://www.baidu.com/duty/" style="color: grey"> 使用百度前必读  </a>
+        <a href="http://jianyi.baidu.com/" style="color: grey">意见反馈</a>
+        京ICP证030173号
+        <br>
+        <img src="./img/1.png" style="width: 15px;height: 12px;" >
+        <span>京公网安备11000002000001号</span>
+    </div>
+</div>
+</body>
+</html>
