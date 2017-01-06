@@ -100,3 +100,17 @@ nav ul i{
     border-radius: 3px;
     color: #FF0000;
 }
+.showMore{
+    width: 100%;
+    height: 12px;
+    text-align: center;
+    padding-bottom: 10px;
+    display: none;
+
+}
+.showMore a{
+    text-decoration: underline;
+    color: #000000;
+    line-height: 12px;
+    cursor: pointer;
+}

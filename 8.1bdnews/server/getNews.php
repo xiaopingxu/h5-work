@@ -1,40 +1,58 @@
 <?php  
+
 	header("Content-type: application/json; charset=utf-8"); 
 
-$link =mysql_connect('localhost','root','root',3306);
-if(!$link){
-	//echo json_encode(array('链接信息'=>'链接失败'));
-}else{
-	//echo json_encode(array('链接信息'=>'链接成功'));
-	$sql='SELECT * FROM news';
+	$link =mysql_connect('localhost','root','root',3306);
+	if($link){
+		//echo json_encode(array('success'=>'ok'));
 
-	mysql_query("set character set 'utf8'");//读库 
+		 
+		if(@$_GET['newsType']){   
+			$newstype=$_GET['newsType'];/*获取参数newstype*/
+			/*传递命令行，表示获取所有newstype等于传递的参数的表项*/  
+	        $sql = "SELECT * FROM `news` WHERE `newsType` = '{$newstype}'";    
+	        mysql_query("set character set 'utf8'");//读库 
+	        mysql_query("set names 'utf8'");//写库 
+	   		
+	   		$result = mysql_db_query('bdnews',$sql,$link);
 
-	$result = mysql_db_query('bdnews',$sql,$link);
+			$senddata = array( );
+			while ($row=mysql_fetch_row($result)){
+				array_push($senddata,array(
+							'id'=>$row[0],
+							'newsType'=>$row[1],
+							'newsTittle'=>$row[2],
+							'newsImg'=>$row[3],
+							'newsTime'=>$row[4],
+							'newsSrc'=>$row[5]
+					));
+			}
+			echo json_encode($senddata); 
 
-	$senddata = array( );
-	while ($row=mysql_fetch_row($result)){
-		array_push($senddata,array(
-					'id'=>$row[0],
-					'newsType'=>$row[1],
-					'newsTittle'=>$row[2],
-					'newsImg'=>$row[3],
-					'newsTime'=>$row[4],
-					'newsSrc'=>$row[5]
-			));
+        }else{ 
+		 $sql = "SELECT * FROM news limit 0,10";    /*传递命令行，表示获取10条的表项*/
+			mysql_query("set character set 'utf8'");//读库 
+
+			$result = mysql_db_query('bdnews',$sql,$link);
+
+			$senddata = array( );
+			while ($row=mysql_fetch_row($result)){
+				array_push($senddata,array(
+							'id'=>$row[0],
+							'newsType'=>$row[1],
+							'newsTittle'=>$row[2],
+							'newsImg'=>$row[3],
+							'newsTime'=>$row[4],
+							'newsSrc'=>$row[5]
+					));
+			}
+				echo json_encode($senddata);   		
+
+		}
+			
+		
 	}
-	echo json_encode($senddata);
-}
-// $arr= array(
-// 			'newsType' =>'百家', 
-// 			'newsTittle' =>'测试动态标题',
-// 			'newsImg' =>'img/3.JPEG',
-// 			'newsTime' =>'2016-1-3',
-// 			'newsSrc' =>'新浪'
-
-
-
-// 	);
-
-// echo json_encode($arr);
+		mysql_close($link)
+		//echo json_encode(array('success'=>'none'));
+	
 ?>
