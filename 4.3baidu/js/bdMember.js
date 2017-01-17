@@ -152,6 +152,53 @@ $(function(skin){
         $("#imgShow").attr("src","")
     });
     //更换皮肤
+
+
+    });
+
+//我的关注
+ $(function(attention){
+    //鼠标移入显示添加等工具栏
+    $(".navtopBox").mousemove(function(){
+        $(this).children(".navbarTools").show();
+    }).mouseleave (function(){
+        $(this).children(".navbarTools").hide();
+    })
+
+ });
+
+//设置cookie
+function setCookie (name, value){
+    //设置名称为name,值为value的Cookie
+    var days=10;
+    var date=new Date();
+    date.setTime(date.getTime()+days*24*60*60*1000); //
+    document.cookie= name+"="+value+";expires="+date.toGMTString();//将date赋值给expires
+
+
+}
+// 获取cookie
+function getCookie(cname){
+    var skinval=document.cookie;
+    var cst=skinval.indexOf(cname + "=");//索引的长度
+    var value;
+    if (cst!=-1) {
+        cst=cst + cname.length+1;
+        //从cst的位置开始查询';'
+        var cend=skinval.indexOf(";",cst);
+        if (cend==-1) {
+            cend = skinval.length;
+        }
+        //截取cookie字符串
+        value=skinval.substring(cst,cend);
+    }else{
+        value="";
+    }
+    return value;
+}
+// 引用cookie
+$(function ()
+{
     $(".imgList").click(function(){
         var bkgUrl=$(this).attr("src");
         $("#wrapper").css({"background":"url("+bkgUrl+") no-repeat"});//背景图片
@@ -170,18 +217,40 @@ $(function(skin){
         $(".s-icons a,.nav-box a").css({
             "color":"#fff"
         }); //导航栏字体颜色
-    })
+        setCookie("skin",bkgUrl );
+
+
 
 
     });
 
-//我的关注
- $(function(attention){
-    //鼠标移入显示添加等工具栏
-    $(".navtopBox").mousemove(function(){
-        $(this).children(".navbarTools").show();
-    }).mouseleave (function(){
-        $(this).children(".navbarTools").hide();
-    })
+    //5.页面打开之后判断它是否存在
+    var skin = getCookie("skin");
+    if (skin == "" ||skin==null)
+    {
+        //6.不存在就把第一张设为默认背景
 
- });
+    }
+    else
+    {
+        //6.如果存在就把$.cookie("skin")传进去,上一次保存的值给它
+        $("#wrapper").css({"background":"url('" + skin + "') no-repeat"});//背景图片
+        $("#s_lg_img").attr("src","img/logo_white.png");//白色logo
+        $(".bd_btn").css({
+            "background-color":"#EDEDED",
+            "border":"1px solid #CDC9C9",
+            "color":"#000"
+        });//搜索按钮样式
+        $("#up-menu").css({
+            "background-color":"rgba(140,140,140,.3)",
+            "border-bottom":"none",
+            "color":"#fff"
+        }); //顶部导航栏样式
+
+        $(".s-icons a,.nav-box a").css({
+            "color":"#fff"
+        }); //导航栏字体颜色
+    }
+
+});
+
