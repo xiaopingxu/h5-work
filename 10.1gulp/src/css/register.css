@@ -1,0 +1,204 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-size: 12px;
+}
+a {
+    text-decoration: underline;
+}
+label{
+    cursor: default;
+    display: block;
+    float: left;
+    height: 42px;
+    width: 65px;
+    margin-right: 10px;
+    line-height: 42px;
+    font-size: 14px;
+    color: #666;
+    font-weight: 700;
+    text-align: right;
+}
+.container{
+    width: 100%;
+}
+#head,#content,#foot{
+    width: 980px;
+    margin-left: auto;
+    margin-right: auto;
+}
+#head{
+    height: 75px;
+    padding-top: 15px;
+    position: relative;
+}
+.rehead{
+    display: block;
+    width: 330px;
+    background: url(../img/logo.png?__spriter) right no-repeat;
+}
+.rehead a{
+    width: 330px;
+    height: 76px;
+}
+.login-link{
+    position: absolute;
+    top: 20px;
+    right: 0;
+    color: #666;
+}
+.login-btn{
+    font-weight: 700;
+    color: #666;
+    height: 32px;
+    width: 64px;
+    border: 0;
+    background: url(../img/reg_icons.png) no-repeat 0 -48px;
+    cursor: pointer;
+}
+#nav{
+    width: 100%;
+    height: 20px;
+    background: url("../img/reg_hr.png")no-repeat center top;
+}/*·Ö¸îÏß*/
+.main-box{
+    position: relative;
+}
+.reg-box{
+    position: relative;
+    float: left;
+    width: 720px;
+    overflow: hidden;
+    padding-top: 40px;
+}
+/*×¢²áÄÚÈÝ*/
+.text-input{
+    display: block;
+    position: relative;
+    float: left;
+    height: 16px;
+    width: 328px;
+    padding: 11px 10px;
+    margin-right: 10px;
+    border: 1px solid #ddd;
+    font-size: 14px;
+    color: #666;
+    transition: .3s;
+}
+.verify{
+    background-color: #FFF68A;
+}
+.text-row{
+    clear: both;
+    margin-bottom: 20px;
+    height: 45px;
+}
+#protocol{
+    margin-left: 75px;
+}
+.submit-btn{
+    display: block;
+    width: 350px;
+    height: 50px;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    color: #fff;
+    background-color: #3f89ec;;
+    border: 0;
+    border-radius: 3px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    margin-left: 75px;
+    margin-top: 20px;
+
+}
+.submit-btn:hover{
+    background-color: #4490f7;
+}
+.reg-mes{
+    width: 258px;
+    height: 208px;
+    border: 1px solid #d1eeff;
+    background-color: #f5fbff;
+    margin-top: 40px;
+    float: right;
+}
+.mes-content{
+
+}
+.mes-tittle{
+    margin: 0 10px;
+    padding-left: 30px;
+    height: 50px;
+    line-height: 50px;
+    background: url(../img/phone.png?__spriter) left center no-repeat;
+    border-bottom: 1px solid #e6edf2;
+    font-size: 14px;
+    color: #666;
+}
+.mes-p{
+
+    margin: 0 10px;
+}
+.p-text{
+    color: #666;
+    font-size: 12px;
+    margin-top: 20px;
+    margin-bottom: 5px;
+}
+.p-warn{
+
+    font-size: 14px;
+    color: #f18300;
+    font-weight: 700;
+}
+.p-last{
+    color: #666;
+    font-size: 12px;
+    margin-top: 5px;
+}
+#foot{
+    clear: both;
+    text-align: center;
+    color: #7a77c8;
+}
+.myfoot{
+   padding-top: 80px;
+}
+.ipt-tip{
+    color:#909090;
+    display: none;
+}
+.onError{
+    float: left;
+    position: relative;
+    width: 250px;
+    top: 12px;
+    color: #fc4343;
+    height: 16px;
+    line-height: 14px;
+    padding-left: 20px;
+    background:url("../img/err_small.png?__spriter") no-repeat 0 0;
+}
+.onSuccess{
+    position: relative;
+    float: left;
+    top: 14px;
+    color: #fc4343;
+    height: 16px;
+    line-height: 12px;
+    padding-left: 20px;
+    background: url(../img/reg_icons.png) no-repeat -80px 0;
+}
+
+.clear{
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    margin-top: 10px;
+    background: url(../img/reg_icons.png) -32px -24px no-repeat;
+    left: 398px;
+    cursor: pointer;
+    /*display: none;*/
+}

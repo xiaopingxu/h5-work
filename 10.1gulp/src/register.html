@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>注册百度账号</title>
+    <script src="./js/jquery-3.1.0.min.js" type="text/javascript"></script>
+    <script src="./js/register.js" type="text/javascript" charset="gbk"></script>
+    <link href="./css/register.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+    <div class="container" id="wap">
+        <div id="head">
+            <div class="rehead">
+                <a href="#">
+                    <img src="./img/baidu.gif">
+                </a>
+            </div>
+            <div class="login-link">
+                <span>我已注册，现在就</span>
+                <button class="login-btn">登录</button>
+            </div>
+        </div>
+        <div id="nav"></div>
+        <div id="content">
+            <div class="main-box">
+                <div class="reg-box">
+                    <form action="" id="myform">
+                        <div class="text-row">
+                            <label for="username">用户名</label>
+                            <input type="text" name="username" id="username" class="text-input" placeholder="请设置用户名">
+                            <span class="clear" onclick="$(this).prev().val('')"
+                           ></span>
+                            <span id="userTips" class="ipt-tip">设置后不可更改<br>中英文均可，最长14个英文或7个汉字</span>
+                        </div>
+                        <div class="text-row">
+                            <label for="phone">手机号</label>
+                            <input type="text" name="phone" id="phone" class="text-input" placeholder="可用于登录和找回密码">
+                            <span class="clear" onclick="$(this).prev().val('')"></span>
+                            <span id="phoneTips" class="ipt-tip">请输入中国大陆手机号其他用户不可见</span>
+                        </div>
+                        <div class="text-row">
+                            <label for="pword">验证码</label>
+                            <input type="text" name="pword" id="pword" class="text-input verify" placeholder="请输入验证码">
+                            <span class="clear" onclick="$(this).prev().val('')"></span>
+                            <span id="passTips"></span>
+                        </div>
+                        <div class="text-row">
+                            <label for="conpword">密码</label>
+                            <input type="password" name="conpword" id="conpword" class="text-input verify" placeholder="请设置登录密码">
+                            <span class="clear" onclick="$(this).prev().val('')"></span>
+                            <span id="conpassTips" class="ipt-tip">长度为6~14个符<br>支持数字,大小写字母和标点符号<br>不允许有空格</span>
+                        </div>
+                        <div id="protocol">
+                            <input type="checkbox" name="bdxieyi" id="xieyi" style="vertical-align: middle">
+                            <span>阅读并接受</span><a href="#">百度用户协议</a>
+                        </div>
+
+                        <div>
+                            <input type="submit" class="submit-btn" value="注册">
+                        </div>
+                    </form>
+                </div>
+                <div class="reg-mes">
+                    <h3 class="mes-tittle">手机快速注册</h3>
+                    <div class="mes-content">
+                        <p class="mes-p p-text">请使用中国大陆手机号，编辑短信</p>
+                        <p class="mes-p p-warn">6-14位字符（支持数字/字母/符号）</p>
+                        <p class="mes-p p-text">作为登录密码，发送至：</p>
+                        <p class="mes-p p-warn">1069 80000 36590</p>
+                        <p class="mes-p p-last">即可注册成功，手机号即为登录帐号。</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div id="foot" class="myfoot">
+            <div>2016 ©Baidu</div>
+        </div>
+    </div>
+</body>
+</html>
