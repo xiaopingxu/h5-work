@@ -1,0 +1,943 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>高级前端工程师面试题汇总</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/seniorEngineer.css" rel="stylesheet" type="text/css">
+
+</head>
+<body>
+<nav class="navbar navbar-inverse" role="navigation">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">前端工程师面试知识汇总</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                <li class="tab-active"><a href="#">javaScript</a></li>
+                <li><a href="#">css</a></li>
+                <li><a href="#">HTML</a></li>
+                <li><a href="#">HTTP</a></li>
+                <li><a href="#">思维脑图</a></li>
+            </ul>
+        </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+</nav>
+<div class="content">
+    <div class="js-show">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-6 col-sm-12">
+                    <div class="list-group">
+                        <a href="#" class="list-group-item ">
+                            <h4 class="list-group-item-heading">1.javascript的typeof返回哪些数据类型  </h4>
+                            <p class="list-group-item-text">Object number function boolean string undefind六种</p>
+                        </a>
+                    </div>
+                    <div class="list-group">
+                        <a href="#" class="list-group-item ">
+                            <h4 class="list-group-item-heading">2.例举3种强制类型转换和2种隐式类型转换? </h4>
+                            <p class="list-group-item-text">
+                                答：(1)强制类型转换：Boolean(0)          //=>false-零<br>
+                                Boolean(newobject())//=>true-对象<br>
+                                Number(undefined)//=>NaN<br>
+                                Number(null)//=>0<br>
+                                String(null) //=>"null" <br>
+                                parseInt()  parseFloat()  JSON.parse()  JSON.stringify()<br>
+                                (2)隐式类型转换： 在使用算术运算符时，运算符两边的数据类型可以是任意的，比如，一个字符串可以和数字相加。之所以不同的数据类型之间可以做运算，是因为JavaScript引擎在运算之前会悄悄的把他们进行了隐式类型转换的<br>
+                                （例如：x+""//等价于String(x) +x//等价于Number(x)x-0//同上!!x//等价于Boolean(x),是双叹号）</p>
+                        </a>
+                    </div>
+                    <div class="list-group">
+                        <a href="#" class="list-group-item ">
+                            <h4 class="list-group-item-heading">3.split() join() 的区别 </h4>
+                            <p class="list-group-item-text">前者是切割成数组的形式，后者是将数组转换成字符串</p>
+                        </a>
+                    </div>
+                    <div class="list-group">
+                        <a href="#" class="list-group-item ">
+                            <h4 class="list-group-item-heading">4.数组方法pop() push() unshift() shift() </h4>
+                            <p class="list-group-item-text">Push()尾部添加 pop()尾部删除    Unshift()头部添加 shift()头部删除.</p>
+                        </a>
+                    </div>
+                    <div class="list-group">
+                        <a href="#" class="list-group-item ">
+                            <h4 class="list-group-item-heading">6.IE和DOM事件流的区别 </h4>
+                            <p class="list-group-item-text">1.事件流的区别：IE采用冒泡型事件 Netscape使用捕获型事件 ，DOM使用先捕获后冒泡型事件<br>
+                                2.事件侦听函数的区别<br>
+
+                                IE使用:
+                                [Object].attachEvent("name_of_event_handler", fnHandler); //绑定函数<br>
+                                [Object].detachEvent("name_of_event_handler", fnHandler); //移除绑定<br>
+
+                                DOM使用：
+                                [Object].addEventListener("name_of_event", fnHandler, bCapture); //绑定函数<br>
+                                [Object].removeEventListener("name_of_event", fnHandler, bCapture); //移除绑定<br>
+
+                                bCapture参数用于设置事件绑定的阶段，true为捕获阶段，false为冒泡阶段。
+                            </p>
+                        </a>
+                    </div>
+                    <div class="list-group">
+                        <a href="#" class="list-group-item ">
+                            <h4 class="list-group-item-heading">7.异步ajax的优缺点都有什么？ </h4>
+                            <p class="list-group-item-text">答：优点:（1）相对于同步ajax：不会造成UI卡死，用户体验好。(2) 相对于刷新页面，省流量<br>
+                                缺点：(1) 后退按钮无效；(2) 多个请求同时触发时，由于回调时间不确定，会造成混乱，避免这种混乱需要复杂的判断机制。(3) 搜索引擎不友好(4)  数据安全</p>
+                        </a>
+                    </div>
+                    <div class="list-group">
+                        <a href="#" class="list-group-item ">
+                            <h4 class="list-group-item-heading">8.Javascript是一种弱类型语言，它分别有什么优点和缺点？ </h4>
+                            <p class="list-group-item-text">答：优点<1>.javascript减少网络传输。<2>.javascript方便操纵html对象 3.跨平台性 JavaScript是依赖于浏览器本身，与操作环境无关，只要能运行浏览器的计算机，并支持JavaScript的浏览器就可以正确执行。
+                                <br>
+                                缺点：<1>.各浏览器厂商对javascript支持程度不同。<2>.“web安全性”对javascript一些功能牺牲。
+
+                            </p>
+                        </a>
+                    </div>
+                    <div class="list-group">
+                        <a href="#" class="list-group-item ">
+                            <h4 class="list-group-item-heading">9.call和apply的区别  </h4>
+                            <p class="list-group-item-text">Object.call(this,obj1,obj2,obj3)       Object.apply(this,arguments) </p>
+                        </a>
+                    </div>
+                    <div class="list-group">
+                        <a href="#" class="list-group-item ">
+                            <h4 class="list-group-item-heading">10.ajax请求时，如何解释json数据 </h4>
+                            <p class="list-group-item-text">使用eval parse 鉴于安全性考虑使用parse更靠谱 </p>
+                        </a>
+                    </div>
+                    <div class="list-group">
+                        <a href="#" class="list-group-item ">
+                            <h4 class="list-group-item-heading">11.b继承a的方法</h4>
+                            <p class="list-group-item-text"><img src="img/b-a.png"></p>
+                        </a>
+                    </div>
+                    <div class="list-group">
+                        <a href="#" class="list-group-item ">
+                            <h4 class="list-group-item-heading">12.JavaScript this指针、闭包、  </h4>
+                            <p class="list-group-item-text">答：在JavaScript里面，this指针代表的是执行当前代码的对象的所有者。<br>
+                                1. (A)作为普通函数直接调用时，this指向window对象.
+                                2. (B)作为控件事件触发时
+                                    1） inline event registration 内联事件注册 .将事件直接写在HTML代码中(element onclick=”doSomething()”), 此时this指向 window对象 。<br>
+                                    2） Traditional event registration 传统事件注册 （DHTML方式）.如 element.onclick = doSomething; 此时this指向 element对象<br>
+                                    3） element onclick=”doSomething(this)”作为参数传递可以指向element<br>
+                                3. (C)作为对象使用时this指向当前对象。形如：new doSomething();<br>
+                                4. (D)使用apply 或者call方法时，this指向所传递的对象。<br>
+                                    形如：var obj={}; doSomething.apply(obj,new Array(”nothing”); //this àobj <br>
+                                    对于函数作为参数传递导致的this指针丢失的问题，目前很多框架都已经有方法解决了。<br>
+                                Prototype的解决方案——传参之前使用bind方法将函数封装起来，并返回封装后的对象-----闭包
+                            </p>
+                        </a>
+                    </div>
+                    <div class="list-group">
+                        <a href="#" class="list-group-item ">
+                            <h4 class="list-group-item-heading">13.事件委托是什么，好处是什么? </h4>
+                            <p class="list-group-item-text">答：让利用事件冒泡的原理，让自己的所触发的事件，让他的父元素代替执行！<br>
+                            好处：新添加的元素还会有之前的事件；提高性能。
+                            </p>
+                        </a>
+                    </div>
+                    <div class="list-group">
+                        <a href="#" class="list-group-item ">
+                            <h4 class="list-group-item-heading">14.闭包是什么，有什么特性，对页面有什么影响 </h4>
+                            <p class="list-group-item-text">闭包就是能够读取其他函数内部变量的函数。 </p>
+                        </a>
+                    </div>
+                    <div class="list-group">
+                        <a href="#" class="list-group-item ">
+                            <h4 class="list-group-item-heading">15.如何阻止事件冒泡和默认事件 </h4>
+                            <p class="list-group-item-text">canceBubble return false </p>
+                        </a>
+                    </div>
+                    <div class="list-group">
+                        <a href="#" class="list-group-item ">
+                            <h4 class="list-group-item-heading">16.添加删除替换插入到某个接点的方法  </h4>
+                            <p class="list-group-item-text">obj.appendChidl()
+                                obj.innersetBefore
+                                obj.replaceChild
+                                obj.removeChild </p>
+                        </a>
+                    </div>
+                    <div class="list-group">
+                        <a href="#" class="list-group-item ">
+                            <h4 class="list-group-item-heading">17.解释jsonp的原理，以及为什么不是真正的ajax </h4>
+                            <p class="list-group-item-text">动态创建script标签，回调函数       Ajax是页面无刷新请求数据操作 </p>
+                        </a>
+                    </div>
+                    <div class="list-group">
+                        <a href="#" class="list-group-item ">
+                            <h4 class="list-group-item-heading">18.javascript的本地对象，内置对象和宿主对象 </h4>
+                            <p class="list-group-item-text">本地对象为array objregexp等可以new实例化
+                                内置对象为gload Math 等不可以实例化的       宿主为浏览器自带的document,window等 </p>
+                        </a>
+                    </div>
+                    <div class="list-group">
+                        <a href="#" class="list-group-item ">
+                            <h4 class="list-group-item-heading">19.document load 和document ready的区别 </h4>
+                            <p class="list-group-item-text">Document.onload是在结构和样式加载完才执行js
+                                Document.ready原生种没有这个方法，jquery中有 $().ready(function)  </p>
+                        </a>
+                    </div>
+                    <div class="list-group">
+                        <a href="#" class="list-group-item ">
+                            <h4 class="list-group-item-heading">20.”==”和“===”的不同 </h4>
+                            <p class="list-group-item-text">1、对于string,number等基础类型，==和===是有区别的<br>
+                                1）不同类型间比较，==之比较“转化成同一类型后的值”看“值”是否相等，===如果类型不同，其结果就是不等<br>
+                                2）同类型比较，直接进行“值”比较，两者结果一样<br>
+                                2、对于Array,Object等高级类型，==和===是没有区别的<br>
+                                进行“指针地址”比较<br>
+                                3、基础类型与高级类型，==和===是有区别的<br>
+                                1）对于==，将高级转化为基础类型，进行“值”比较<br>
+                                2）因为类型不同，===结果为false </p>
+                        </a>
+                     </div>
+                </div>
+                <div class="col-md-6 col-sm-12">
+                    <div class="list-group">
+                        <a href="#" class="list-group-item ">
+                            <h4 class="list-group-item-heading"> 21.javascript的同源策略 </h4>
+                            <p class="list-group-item-text">答：一段脚本只能读取来自于同一来源的窗口和文档的属性，
+                                这里的同一来源指的是主机名、协议和端口号的组合 </p>
+                        </a>
+                    </div>
+                    <div class="list-group">
+                        <a href="#" class="list-group-item ">
+                            <h4 class="list-group-item-heading"> 22.编写一个数组去重的方法</h4>
+                            <p class="list-group-item-text">答：function oSort(arr){
+                                var result ={};
+                                var newArr=[];
+                                for(var i=0;i< arr.length;i++){ if(!result[arr]){    newArr.push(arr)   result[arr]=1 }
+                                }
+                                return newArr   }
+                                ( arr.length;i++)
+                            </p>
+                        </a>
+                    </div>
+                    <div class="list-group">
+                        <a href="#" class="list-group-item ">
+                            <h4 class="list-group-item-heading"> 23.JavaScript作用域链</h4>
+                            <p class="list-group-item-text">答：当代码在一个环境中执行时，会创建变量对象的的一个作用域链（scope chain）。作用域链的用途，是保证对执行环境有权访问的所有变量和函数的有序访问。作用域链的前端，始终都是当前执行的代码所在环境的变量对象。如果这个环境是一个函数，则将其活动对象作为变量对象。
+                                每一个函数都有自己的执行环境，当执行流进一个函数时，函数环境就会被推入一个环境栈中，而在函数执行之后，栈将其环境弹出，把控制权返回给之前的执行环境，这个栈也就是作用域链。
+                            </p>
+                            <img src="img/zyy.png">
+                        </a>
+                    </div>
+                    <div class="list-group">
+                        <a href="#" class="list-group-item ">
+                            <h4 class="list-group-item-heading"> 24.JavaScript变量声明提升</h4>
+                            <p class="list-group-item-text">答：1. javascript的作用域是函数，不是块<br>
+                                2. 在函数内部，javascript解释器会把var变量提升到当前域的最前面，但是函数体不会提升。
+                            </p>
+                            <img src="img/blts.png">
+                        </a>
+                    </div>
+                    <div class="list-group">
+                        <a href="#" class="list-group-item ">
+                            <h4 class="list-group-item-heading"> 25.JavaScript原型链</h4>
+                            <p class="list-group-item-text">答：原型链：当从一个对象那里调取属性或方法时，如果该对象自身不存在这样的属性或方法，就会去自己关联的prototype对象那里寻找，
+                                如果prototype没有，就会去prototype关联的前辈prototype那里寻找，如果再没有则继续查找Prototype.Prototype引用的对象，依次类推，直到Prototype.….Prototype为undefined（Object的Prototype就是undefined）从而形成了所谓的“原型链”。
+                            </p>
+                            <img src="./img/yxl.png">
+                            <img src="img/yxl2.png">
+                        </a>
+                    </div>
+                    <div class="list-group">
+                        <a href="#" class="list-group-item ">
+                            <h4 class="list-group-item-heading"> 26.如何解决回调层级过深的问题</h4>
+                            <p class="list-group-item-text">答：
+                                1、把你的回调函数提取出来，命名，写成可复用的函数；
+                                2、尽量使用模块，一个模块处理一件事情；；
+                                3、嵌套结构不要太深，可以合理的使用promise；
+                            </p>
+                        </a>
+                    </div>
+                    <div class="list-group">
+                        <a href="#" class="list-group-item ">
+                            <h4 class="list-group-item-heading"> 27.事件流?事件捕获？事件冒泡？</h4>
+                            <p class="list-group-item-text">答：事件流：从页面中接收事件的顺序。也就是说当一个事件产生时，这个事件的传播过程，就是事件流。IE中的事件流叫事件冒泡；<br>
+                                事件冒泡：事件开始时由最具体的元素接收，然后逐级向上传播到较为不具体的节点（文档）。
+                                对于html来说，就是当一个元素产生了一个事件，它会把这个事件传递给它的父元素，父元素接收到了之后，
+                                还要继续传递给它的上一级元素，就这样一直传播到document对象（亲测现在的浏览器到window对象，只有IE8及下不这样）；<br>
+                                事件捕获是不太具体的元素应该更早接受到事件，而最具体的节点应该最后接收到事件。他们的用意是在事件到达目标之前就捕获它；也就是跟冒泡的过程正好相反，
+                                以html的click事件为例，document对象（DOM级规范要求从document开始传播，但是现在的浏览器是从window对象开始的）最先接收到click事件的然后事件沿着DOM树依次向下传播，
+                                一直传播到事件的实际目标
+
+                            </p>
+                        </a>
+                    </div>
+                    <div class="list-group">
+                        <a href="#" class="list-group-item ">
+                            <h4 class="list-group-item-heading"> 28.如何清除一个定时器</h4>
+                            <p class="list-group-item-text">答：window.clearInterval();<br>
+                                window.clearTimeout();
+                            </p>
+                        </a>
+                    </div>
+                    <div class="list-group">
+                        <a href="#" class="list-group-item ">
+                            <h4 class="list-group-item-heading"> 29.如何添加一个dom对象到body中?innerHTML和innerText区别?</h4>
+                            <p class="list-group-item-text">答：body.appendChild(dom元素)；<br>
+                                innerHTML:从对象的起始位置到终止位置的全部内容,包括Html标签。<br>
+                                innerText:从起始位置到终止位置的内容,但它去除Html标签
+                            </p>
+                        </a>
+                    </div>
+                    <div class="list-group">
+                        <a href="#" class="list-group-item ">
+                            <h4 class="list-group-item-heading"> 30.什么是闭包?*堆栈溢出有什么区别？内存泄漏?那些操作会造成内存泄漏？怎么样防止内存泄漏？</h4>
+                            <p class="list-group-item-text">答：闭包：就是能够读取其他函数内部变量的函数。<br>
+                                堆栈溢出：就是不顾堆栈中分配的局部数据块大小，向该数据块写入了过多的数据，导致数据越界，结果覆盖了别的数据。经常会在递归中发生。<br>
+                                内存泄露是指：用动态存储分配函数内存空间，在使用完毕后未释放，导致一直占据该内存单元。直到程序结束。指任何对象在您不再拥有或需要它之后仍然存在。<br>
+                                造成内存泄漏： setTimeout的第一个参数使用字符串而非函数的话，会引发内存泄漏。 闭包、控制台日志、循环（在两个对象彼此引用且彼此保留时，就会产生一个循环）防止内存泄露： 1、不要动态绑定事件； 2、不要在动态添加，或者会被动态移除的dom上绑事件，用事件冒泡在父容器监听事件；3、如果要违反上面的原则，必须提供destroy方法，保证移除dom后事件也被移除，这点可以参考Backbone的源代码，做的比较好；4、单例化，少创建dom，少绑事件。
+                            </p>
+                        </a>
+                    </div>
+                    <div class="list-group">
+                        <a href="#" class="list-group-item ">
+                            <h4 class="list-group-item-heading"> 31.自执行函数?用于什么场景？好处</h4>
+                            <p class="list-group-item-text">答：自执行函数:1、声明一个匿名函数2、马上调用这个匿名函数.<br>
+                                作用：创建一个独立的作用域。<br>
+                                好处：防止变量弥散到全局，以免各种js库冲突。隔离作用域避免污染，或者截断作用域链，避免闭包造成引用变量无法释放。利用立即执行特性，返回需要的业务函数或对象，避免每次通过条件判断来处理
+                                <br>场景：一般用于框架、插件等场景
+
+                            </p>
+                        </a>
+                    </div>
+                    <div class="list-group">
+                        <a href="#" class="list-group-item ">
+                            <h4 class="list-group-item-heading"> 32.jq中get和eq有什么区别？</h4>
+                            <p class="list-group-item-text">答：get():取得其中一个匹配的元素。num表示取得第几个匹配的元素，get多针对集合元素，返回的是DOM对象组成的数组<br>
+                                eq():获取第N个元素，下标都是从0开始，返回的是一个JQuery对象
+                            </p>
+                        </a>
+                    </div>
+                    <div class="list-group">
+                        <a href="#" class="list-group-item ">
+                            <h4 class="list-group-item-heading"> 33.什么是构造函数？与普通函数有什么区别</h4>
+                            <p class="list-group-item-text">答：构造函数：是一种特殊的方法、主要用来创建对象时初始化对象，总与new运算符一起使用，
+                                创建对象的语句中构造函数的函数名必须与类名完全相同。<br>与普通函数相比只能由new关键字调用，构造函数是类的标示
+
+                            </p>
+                        </a>
+                    </div>
+                    <div class="list-group">
+                        <a href="#" class="list-group-item ">
+                            <h4 class="list-group-item-heading"> 34.通过new创建一个对象的时候，函数内部有哪些改变</h4>
+                            <p class="list-group-item-text">答：functionPerson(){} Person.prototype.friend=[];Person.prototype.name='';<br>
+                                //var a=newPerson();//a.friend[0]='王琦';<br>
+                                //a.name='程娇';//varb=newPerson();<br>
+                                //b.friend？ //b.name? <br>
+                                1、创建一个空对象，并且this变量引用该对象，同时还继承了该函数的原型。<br>
+                                2、属性和方法被加入到this引用的对象中。<br>
+                                3、新创建的对象由this所引用，并且最后隐式的返回this。
+
+                            </p>
+                        </a>
+                    </div>
+                    <div class="list-group">
+                        <a href="#" class="list-group-item ">
+                            <h4 class="list-group-item-heading"> 35.window.onload==?DOMContentLoaded</h4>
+                            <p class="list-group-item-text">答：一般情况下，DOMContentLoaded事件要在window.onload之前执行，当DOM树构建完成的时候就会执行DOMContentLoaded事件，
+                                而window.onload是在页面载入完成的时候，才执行，这其中包括图片等元素。大多数时候我们只是想在DOM树构建完成后，绑定事件到元素，我们并不需要图片元素，加上有时候加载外域图片的速度非常缓慢。
+
+                            </p>
+                        </a>
+                    </div>
+                    <div class="list-group">
+                        <a href="#" class="list-group-item ">
+                            <h4 class="list-group-item-heading"> 36.异步编程？</h4>
+                            <p class="list-group-item-text">答：方法1：回调函数，优点是简单、容易理解和部署，缺点是不利于代码的阅读和维护，各个部分之间高度耦合（Coupling），流程会很混乱，而且每个任务只能指定一个回调函数。<br>
+                                方法2：时间监听，可以绑定多个事件，每个事件可以指定多个回调函数，而且可以“去耦合”（Decoupling），有利于实现模块化。缺点是整个程序都要变成事件驱动型，运行流程会变得很不清晰。<br>
+                                方法3：发布/订阅，性质与“事件监听”类似，但是明显优于后者。<br>
+                                方法4：Promises对象，是CommonJS工作组提出的一种规范，目的是为异步编程提供统一接口。 简单说，它的思想是，每一个异步任务返回一个Promise对象，该对象有一个then方法，允许指定回调函数。
+
+                            </p>
+                        </a>
+                    </div>
+                    <div class="list-group">
+                        <a href="#" class="list-group-item ">
+                            <h4 class="list-group-item-heading"> 37.写出javascript运行结果：
+
+                                for(var i=0; i<10; i++){} alert(i);  </h4>
+                            <p class="list-group-item-text">答：10
+
+                            </p>
+                        </a>
+                    </div>
+                    <div class="list-group">
+                        <a href="#" class="list-group-item ">
+                            <h4 class="list-group-item-heading"> 38. Cookie、sessionStorage、localStorage的区别</h4>
+                            <p class="list-group-item-text">答：1.cookie:存储在用户本地终端上的数据。有时也用cookies，指某些网站为了辨别用户身份，进行session跟踪而存储在本地终端上的数据，通常经过加密。一般应用最典型的案列就是判断注册用户是否已经登过该网站。<br>
+                                2.localStorage - 没有时间限制的数据存储,第二天、第二周或下一年之后，数据依然可用。<br>
+                                3.sessionStorage - 针对一个 session 的数据存储,当用户关闭浏览器窗口后，数据会被删除<br>
+                                共同点：都是保存在浏览器端，且同源的。<br>
+                                区别：cookie数据始终在同源的http请求中携带（即使不需要），即cookie在浏览器和服务器间来回传递；cookie数据还有路径（path）的概念，可以限制cookie只属于某个路径下。存储大小限制也不同，cookie数据不能超过4k，同时因为每次http请求都会携带cookie，所以cookie只适合保存很小的数据，如会话标识。<br>
+                                而sessionStorage和localStorage不会自动把数据发给服务器，仅在本地保存。sessionStorage和localStorage 虽然也有存储大小的限制，但比cookie大得多，可以达到5M或更大。<br>
+                                数据有效期不同，sessionStorage：仅在当前浏览器窗口关闭前有效，自然也就不可能持久保持；localStorage：始终有效，窗口或浏览器关闭也一直保存，因此用作持久数据；cookie只在设置的cookie过期时间之前一直有效，即使窗口或浏览器关闭。<br>
+                                作用域不同，sessionStorage不在不同的浏览器窗口中共享，即使是同一个页面；localStorage 在所有同源窗口中都是共享的；cookie也是在所有同源窗口中都是共享的。Web Storage 支持事件通知机制，可以将数据更新的通知发送给监听者。Web Storage 的 api 接口使用更方便。<br>
+
+                            </p>
+                        </a>
+                    </div>
+                    <div class="list-group">
+                        <a href="#" class="list-group-item ">
+                            <h4 class="list-group-item-heading"> 39.简述在IE下mouseover和mouseenter的区别？</h4>
+                            <p class="list-group-item-text">
+                                答：不论鼠标指针穿过被选元素或其子元素，都会触发 mouseover 事件。对应mouseout只有在鼠标指针穿过被选元素时，才会触发 mouseenter 事件。对应mouseleave
+                                这样的话，mouseenter子元素不会反复触发事件，否则在IE中经常有闪烁情况发生
+
+                            </p>
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- cssShow-->
+    <div class="css-show">
+            <div class="container-fluid">
+                <div class="col-md-6 col-sm-12">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">1.了解过flex布局吗？说说它和传统布局的有何不同？</div>
+                        <div class="panel-body">
+                            Flexbox 布局是 CSS 3 新增的布局模式，在 display 中的值是 display: flex; display: inline-flex;。flex 具有很好的适应性，在电脑浏览器和手机浏览器中都有很好的表现。<br>
+                            没有 flexbox 时，使用 css 布局时，我们使用 float 、display 和 position，这些技术没有问题，但是实现不是很直观。但是利用这些技术，且对于一些特殊任务实现起来仍然有困难，比如 垂直居中元素。flex 实现这些布局是相当容易的事情，我们可以总结说，Flexbox 就是一种“弹性布局”模型，能很好支持不同视口尺寸和设备
+                        </div>
+                    </div>
+                    <div class="panel panel-default">
+                        <div class="panel-heading">2.移动端的图片优化实践方式有哪些？</div>
+                        <div class="panel-body">
+                            1.去掉无意义的修饰。<br>
+                            2.不用图片。
+                            3.使用矢量图替代位图。
+                            4.使用恰当的图片格式。
+                            5. 使用data url。
+                            6按照HTTP协议设置合理的缓存。
+                            7. 使用支持SPDY的服务器。
+                            8. 资源的lazyload或postpone。
+                            9. 资源的prefetch。
+                            10. 最后是responsive设计所需的图片优化
+                        </div>
+                    </div>
+                    <div class="panel panel-default">
+                        <div class="panel-heading">3.你知道什么是CSS reset么？</div>
+                        <div class="panel-body">
+                            Reset重置浏览器的css默认属性浏览器的品种不同，样式不同，然后重置，让他们统一
+                        </div>
+                    </div>
+                    <div class="panel panel-default">
+                        <div class="panel-heading">4.CSS引入的方式有哪些?link和import的区别</div>
+                        <div class="panel-body">
+                            内联内嵌外链导入   区别：同时加载    前者无兼容性，后者CSS2.1以下浏览器不支持
+                            Link 支持使用javascript改变样式，后者不可
+                        </div>
+                    </div>
+                    <div class="panel panel-default">
+                        <div class="panel-heading">5.CSS水平垂直居中怎么实现？</div>
+                        <div class="panel-body">
+                           <img src="img/jz-h.png">
+                           <img src="img/jz-c.png">
+                        </div>
+                    </div>
+                    <div class="panel panel-default">
+                        <div class="panel-heading">6.一个浮动的div后面又跟了一个div，在页面上是怎么布局的</div>
+                        <div class="panel-body">
+                           重叠
+                        </div>
+                    </div>
+                    <div class="panel panel-default">
+                        <div class="panel-heading">7.写出下列代码在各个浏览器中的颜色值?<br>
+                            background: red;
+                            _background: green;
+                            *background: blue;
+                            background: black\9; </div>
+                        <div class="panel-body">
+                            background-color:red; /* All browsers */<br>
+                            *background-color:blue; /* IE6, IE7 */<br>
+                            background-color:black\9; /* IE6, IE7, IE8, IE9, IE10 */<br>
+                            _background-color:green; /* Only works in IE6 */<br>
+                        </div>
+                    </div>
+                    <div class="panel panel-default">
+                        <div class="panel-heading">8.怎么让Chrome支持小于12px 的文字？</div>
+                        <div class="panel-body">
+                            Chrome中文界面下默认会将小于12px的文本强制按照12px显示,可通过加入CSS属性-webkit-text-size-adjust:none;解决.
+                        </div>
+                    </div>
+                    <div class="panel panel-default">
+                        <div class="panel-heading">9. css实现超出字体内容出现 ...</div>
+                        <div class="panel-body">
+                            实现单行文本的溢出显示省略号
+                            实现方法：{
+                            overflow: hidden;
+                            text-overflow:ellipsis;
+                            white-space: nowrap;}
+                            <br>
+                            实现多行文本溢出显示省略号
+                            实现方法：{
+                            display: -webkit-box;
+                            -webkit-box-orient: vertical;
+                            -webkit-line-clamp: 3;
+                            overflow: hidden;}
+
+                        </div>
+                    </div>
+                    <div class="panel panel-default">
+                        <div class="panel-heading">10.css position 中有哪些值可以使用？</div>
+                        <div class="panel-body">
+                            在CSS中关于定位的内容是：position:relative | absolute | static | fixed<br>
+                            •    static 没有特别的设定，遵循基本的定位规定，不能通过z-index进行层次分级。<br>
+                            •    relative 不脱离文档流，参考自身静态位置通过top,bottom,left,right定位，并且可以通过z-index进行层次分级。<br>
+                            •    absolute 脱离文档流，通过top,bottom,left,right定位。选53D6其最近的父级定位元素，当父级 position 为
+                            static 时，absolute元素将以body坐标原点进行定位，可以通过z-index进行层次分级。<br>
+                            •    fixed 固定定位，这里他所固定的对像是可视窗口而并非是body<br>
+                            或是父级元素。可通过z-index进行层次分级。
+                        </div>
+                    </div>
+                    <div class="panel panel-default">
+                        <div class="panel-heading">11.对于浮动的理解，清除浮动的方法及原理？</div>
+                        <div class="panel-body">
+                            1、父级div定义height <br>
+                            2、结尾处加空div标签clear:both <br>
+                            3、父级div定义伪类:after和zoom <br>
+                            4、父级div定义overflow:hidden <br>
+                            5、父级div定义overflow:auto <br>
+                            6、父级div也一起浮动 <br>
+                            7、父级div定义display:table <br>
+                        </div>
+                    </div>
+                    <div class="panel panel-default">
+                        <div class="panel-heading">12.transform 都可以有哪些值？</div>
+                        <div class="panel-body">
+                            transform(变形)是CSS3中的元素的属性，transform的属性值主要包括旋转rotate、扭曲skew、缩放scale和移动translate以及矩阵变形matrix
+                        </div>
+                    </div>
+                    <div class="panel panel-default">
+                        <div class="panel-heading">13.margin和padding分别适合什么场景使用？</div>
+                        <div class="panel-body">
+                            ◆何时应当使用margin<br>
+                            需要在border外侧添加空白时。<br>
+                            空白处不需要背景（色）时。<br>
+                            上下相连的两个盒子之间的空白，需要相互抵消时。如15px+20px的margin，将得到20px的空白。<br>
+                            ◆何时应当时用padding<br>
+                            需要在border内测添加空白时。<br>
+                            空白处需要背景（色）时。<br>
+                            上下相连的两个盒子之间的空白，希望等于两者之和时。如15px+20px的padding，将得到35px的空白。<br>
+                            ◆浏览器兼容性问题
+
+                            在IE5.x、IE6中，为float的盒子指定margin时，左侧margin可能会变成两倍的宽度。通过改用padding或指定盒子为display:inline可以解决。
+                        </div>
+                    </div>
+                    <div class="panel panel-default">
+                        <div class="panel-heading">14.简述几个css hack?</div>
+                        <div class="panel-body">
+                            （1）图片间隙 在div中插入图片，图片会将div下方撑大3px。<br>
+                            hack1：将《div》与《img》写在同一行。<br>
+                            hack2：给《img》添加display：block； dt li中的图片间隙。hack：给《img》添加display：block；<br>
+                            （2）默认高度，IE6以下版本中，部分块元素，拥有默认高度（低于18px）<br>
+                            hack1：给元素添加：font-size：0；<br>
+                            hack2：声明：overflow：hidden；<br>
+                            (3)表单行高不一致 hack1：给表单添加声明：float：left；height：；border：0；<br>
+                            (4)鼠标指针 hack：若统一某一元素鼠标指针为手型：cursor：pointer；<br>
+                            (5)当li内的a转化块元素时，给a设置float，IE里面会出现阶梯状<br>
+                                hack1：给a加display：inline-block；hack2：给li加float：left；<br>
+                        </div>
+                    </div>
+                    <div class="panel panel-default">
+                        <div class="panel-heading">15.img标签上title与alt属性的区别是什么?</div>
+                        <div class="panel-body">
+                            Alt 当图片不显示是用文字代表。     Title 为该属性提供信息
+                        </div>
+                    </div>
+                    <div class="panel panel-default">
+                        <div class="panel-heading">16.在网页中的应该使用奇数还是偶数的字体？为什么呢？</div>
+                        <div class="panel-body">
+                            偶数<br>
+                            一、UI设计师的原因
+                            多数设计师用的设计软件（如：ps）大多数都是偶数，所以前端工程师一般都是用偶数字体
+                            二、浏览器的原因
+                            其一是为了迁就ie6，万恶的ie6会把定义为13px的字渲染成14px，
+                            还有一个原因是，偶数宽的汉字，比如12px宽的汉字，去掉1像素的间距，填充了像素的实际宽是11px，这样汉字的中竖线左右是平分的，以“中”这个字为例，在12像素时，竖线在中间，左右各5像素，显得均衡。
+                            其二像谷歌一些比较流行的浏览器一般会有个默认的最小字体，而且对奇数字体渲染的不太好看<br>
+                            三、实际应用
+                            偶数字号相对更容易和 web 设计的其他部分构成比例关系。比如：当我用了 14 px 的正文字号，我可能会在一些地方用 14 × 0.5 = 7 px 的 margin，在另一些地方用 14 × 1.5 = 21 px 的标题字号。
+                        </div>
+                    </div>
+                    <div class="panel panel-default">
+                        <div class="panel-heading">17. .:before和::before区别?</div>
+                        <div class="panel-body">
+                            单冒号(:)用于CSS3伪类，双冒号(::)用于CSS3伪元素。对于CSS2之前已有的伪元素，比如:before，单冒号和双冒号的写法::before作用是一样的。
+                        </div>
+                    </div>
+                    <div class="panel panel-default">
+                        <div class="panel-heading">18.viewport所有属性？</div>
+                        <div class="panel-body">
+                            答：(1)width:设置layoutviewport的宽度，为一个正整数，或字符串'device-width';<br>
+                            (2)initial-scale:设置页面的初始缩放值，为一个数字，可以带小数。<br>
+                            (3)minimum-scale:允许用户的最小缩放值，为一个数字，可以带小数。<br>
+                            (4)maximum-scale:允许用户的最大缩放值，为一个数字，可以带小数。<br>
+                            (5)height:设置layoutviewport的高度，这个属性对我们并不重要，很少使用<br>
+                            (6)user-scalable:是否允许用户进行缩放，值为‘no’或者‘yes’。 安卓中还支持：target-densitydpi，表示目标设备的密度等级，作用是决定css中的1px代表多少物理像素 <br>
+                            (7)target-densitydpi:值可以为一个数值或者high-dpi、medium-dpi、low-dpi、device-dpi这几个字符串中的一个
+                        </div>
+                    </div>
+                    <div class="panel panel-default">
+                        <div class="panel-heading">19.行内元素有哪些?块级元素有哪些?CSS的盒模型?</div>
+                        <div class="panel-body">
+                            块级元素：div p h1 h2 h3 h4 form ul   <br>
+                            行内元素: a b bri span input select  <br>
+                            Css盒模型:内容，border ,margin，padding
+                        </div>
+                    </div>
+                    <div class="panel panel-default">
+                        <div class="panel-heading">20.css定义的权重 </div>
+                        <div class="panel-body">
+                            以下是权重的规则：标签的权重为1，class的权重为10，id的权重为100，以下例子是演示各种定义的权重值：/*权重为1*/div{}/*权重为 10*/.class1{}/*权重为100*/#id1{}/*权重为100+1=101*/#id1 div{}/*权重为10+1=11*/.class1 div{}/*权重为10+10+1=21*/.class1 .class2 div{} 如果权重相同，则最后定义的样式会起作用，但是应该避免这种情况出现
+                        </div>
+                    </div>
+
+                </div>
+                <div class="col-md-6 col-sm-12">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">21.CSS 选择符有哪些？哪些属性可以继承？优先级算法如何计算？</div>
+                        <div class="panel-body">
+                            标签选择符类选择符 id选择符   继承不如指定 Id>class>标签选择
+                            后者优先级高
+                        </div>
+                    </div>
+                    <div class="panel panel-default">
+                        <div class="panel-heading">22. CSS3新增伪类有那些？</div>
+                        <div class="panel-body">
+                            p:first-of-type选择属于其父元素的首个元素的每个元素。<br>
+
+                            p:last-of-type  选择属于其父元素的最后元素的每个元素。 <br>
+                            p:only-of-type  选择属于其父元素唯一的元素的每个元素。 <br>
+                            p:only-child    选择属于其父元素的唯一子元素的每个元素。<br>
+                            p:nth-child(2)  选择属于其父元素的第二个子元素的每个元素。<br>
+                            :enabled  :disabled 控制表单控件的禁用态。 <br>
+                            :checked单选框或复选框被选中。
+                        </div>
+                    </div>
+                    <div class="panel panel-default">
+                        <div class="panel-heading">23.如何居中div？如何居中一个浮动元素？？</div>
+                        <div class="panel-body">
+                            给div设置一个宽度，然后添加margin:0 auto属性     div{    width:200px;    margin:0 auto; }        <br>
+                            居中一个浮动元素 : 确定容器的宽高宽500 高 300 的层  设置层的外边距 .div  {   Width:500px  height:300px;//高度可以不设  Margin: -150px 0 0 -250px;  position:relative;相对定位  background-color:pink;//方便看效果  left:50%;  top:50%;}
+                        </div>
+                    </div>
+                    <div class="panel panel-default">
+                        <div class="panel-heading">24.position跟display、margin collapse、overflow、float这些特性相互叠加后会怎么样？</div>
+                        <div class="panel-body">
+                            这个题目应该能拆成几个点来回答：1、'display'、'position' 和 'float' 的相互关系；2、 position跟display、 overflow、 float下的 margin collapse。
+                        </div>
+                    </div>
+                    <div class="panel panel-default">
+                        <div class="panel-heading">25.style标签写在body后与body前有什么区别？？</div>
+                        <div class="panel-body">
+                           页面自上向下加载 写在body里面CSS又会重新渲染了一次页面，占用一定的时间，如果网页篇幅少的话感觉不出来，如果篇幅多（包含有大量HTML）会有一定的影响，所以大页面中不建议将style写进body里。
+                        </div>
+                    </div>
+                    <div class="panel panel-default">
+                        <div class="panel-heading">26.CSS3有哪些新特性？</div>
+                        <div class="panel-body">
+                            CSS3实现圆角（border-radius:8px），阴影（box-shadow:10px），  对文字加特效（text-shadow、），线性渐变（gradient），旋转（transform）  transform:rotate(9deg) scale(0.85,0.90)  translate(0px,-30px) skew(-9deg,0deg);//旋转,缩放,定位,倾斜  增加了更多的CSS选择器  多背景rgba
+                        </div>
+                    </div>
+                    <div class="panel panel-default">
+                        <div class="panel-heading">27.对WEB标准以及W3C的理解与认识？写出下列代码在各个浏览器中的颜色值?</div>
+                        <div class="panel-body">
+                            标签闭合、标签小写、不乱嵌套、提高搜索机器人搜索几率、使用外链css和js脚本、结构行为表现的分离、文件下载与页面速度更快、内容能被更多的用户所访问、内容能被更广泛的设备所访问、更少的代码和组件，容易维护、改版方便，不需要变动页面内容、提供打印版本而不需要复制内容、提高网站易用性;
+                        </div>
+                    </div>
+                    <div class="panel panel-default">
+                        <div class="panel-heading">28.解释css sprites，如何使用</div>
+                        <div class="panel-body">
+                            Css精灵把一堆小的图片整合到一张大的图片上，减轻服务器对图片的请求数量
+                        </div>
+                    </div>
+                    <div class="panel panel-default">
+                        <div class="panel-heading">29. 浏览器标准模式和怪异模式之间的区别是什么?.</div>
+                        <div class="panel-body">
+                            盒子模型渲染模式的不同
+                            使用window.top.document.compatMode可显示为什么模式
+                        </div>
+                    </div>
+                    <div class="panel panel-default">
+                        <div class="panel-heading">30.px和em的区别</div>
+                        <div class="panel-body">
+                            答：px像素是相对长度单位。像素px是相对于显示器屏幕分辨率而言的。<br>
+                            em是相对长度单位。相对于当前对象内文本的字体尺寸。
+                            如当前对行内文本的字体尺寸未被人为设置，则相对于浏览器的默认字体尺寸。1、em的值并不是固定的；2、em会继承父级元素的字体大小。使用rem为元素设定字体大小时，仍然是相对大小，但相对的只是HTML根元素。这个单位可谓集相对大小和绝对大小的优点于一身，通过它既可以做到只修改根元素就成比例地调整所有字体大小，又可以避免字体大小逐层复合的连锁反应。
+                        </div>
+                     </div>
+                    <div class="panel panel-default">
+                        <div class="panel-heading">31.请缩写以下代码？.box{
+
+                            background-position: 10px 20px;
+
+                            background-repeat: no-repeat;
+
+                            background-attachment: fixed;
+
+                            background-color: red;
+
+                            background-image: url("box.png");
+
+                            }
+
+                         </div>
+                        <div class="panel-body">
+                            background: red url("box.png") fixed no-repeat 10px 20px;
+                        </div>
+                    </div>
+                    <div class="panel panel-default">
+                        <div class="panel-heading">32.display: none和visibility: hidden的区别是什么？？</div>
+                        <div class="panel-body">
+                            两者都是把网页上的某个元素隐藏起来的，但是display: none是彻底删除删除这个对象，visibility: hidden只是把这个元素隐藏了，然而，元素所占的空间没有改变
+                        </div>
+                    </div>
+                    <div class="panel panel-default">
+                        <div class="panel-heading">33.用纯CSS创建一个三角形的原理是什么？</div>
+                        <div class="panel-body">
+                            把上、左、右三条边隐藏掉（颜色设为 transparent）#demo { width: 0; height: 0; border-width: 20px; border-style: solid; border-color: transparent transparent red transparent;}
+                        </div>
+                    </div>
+                    <div class="panel panel-default">
+                        <div class="panel-heading">34.一个满屏 品 字布局 如何设计?</div>
+                        <div class="panel-body">
+                            简单的方式： 上面的div宽100%， 下面的两个div分别宽50%， 然后用float或者inline使其不换行即可
+                        </div>
+                    </div>
+                    <div class="panel panel-default">
+                        <div class="panel-heading">35.CSS里的visibility属性有个collapse属性值是干嘛用的？在不同浏览器下以后什么区别？</div>
+                        <div class="panel-body">
+
+                        </div>
+                    </div>
+                    <div class="panel panel-default">
+                        <div class="panel-heading">36.让页面里的字体变清晰，变细用CSS怎么做？</div>
+                        <div class="panel-body">
+                            -webkit-font-smoothing: antialiased
+                        </div>
+                    </div>
+                    <div class="panel panel-default">
+                        <div class="panel-heading">37. 如果需要手动写动画，你认为最小时间间隔是多久，为什么？</div>
+                        <div class="panel-body">
+                            多数显示器默认频率是60Hz，即1秒刷新60次，所以理论上最小间隔为1/60＊1000ms ＝ 16.7ms
+                        </div>
+                    </div>
+                    <div class="panel panel-default">
+                        <div class="panel-heading">38.display:inline-block 什么时候会显示间隙？</div>
+                        <div class="panel-body">
+                            移除空格、使用margin负值、使用font-size:0、letter-spacing、word-spacing
+                        </div>
+                    </div>
+                    <div class="panel panel-default">
+                        <div class="panel-heading">39.overflow: scroll时不能平滑滚动的问题怎么处理？</div>
+                        <div class="panel-body">
+                            有一个高度自适应的div，里面有两个div，一个高度100px，希望另一个填满剩下的高度。
+                        </div>
+                    </div>
+                    <div class="panel panel-default">
+                        <div class="panel-heading">40.什么是CSS 预处理器 / 后处理器？</div>
+                        <div class="panel-body">
+                            - 预处理器例如：LESS、Sass、Stylus，用来预编译Sass或less，增强了css代码的复用性，还有层级、mixin、变量、循环、函数等，具有很方便的UI组件模块化开发能力，极大的提高工作效率。<br>
+                            - 后处理器例如：PostCSS，通常被视为在完成的样式表中根据CSS规范处理CSS，让其更有效；目前最常做的是给CSS属性添加浏览器私有前缀，实现跨浏览器兼容性的问题。
+                        </div>
+                    </div>
+
+
+                </div>
+
+        </div>
+    </div>
+    <!-- htmlShow-->
+    <div class="html-show">
+        <div class="container-fluid">
+            <div class="panel panel-default">
+                <div class="panel-heading">1.html5有哪些新特性、移除了那些元素？如何处理HTML5新标签的浏览器兼容问题？如何区分 HTML 和 HTML5？</div>
+                <div class="panel-body">
+                    HTML5 现在已经不是 SGML 的子集，主要是关于图像，位置，存储，多任务等功能的增加。<br>
+                    绘画 canvas 用于媒介回放的 video 和 audio 元素本地离线存储 localStorage 长期存储数据，浏览器关闭后数据不丢失；sessionStorage 的数据在浏览器关闭后自动删除语意化更好的内容元素，比如 article、footer、header、nav、section 表单控件，calendar、date、time、email、url、search 新的技术webworker, websockt, Geolocation
+                </div>
+            </div>
+            <div class="panel panel-default">
+                <div class="panel-heading">2简述一下你对HTML语义化的理解？</div>
+                <div class="panel-body">
+                    用正确的标签做正确的事情<br>
+
+                    HTML语义化就是让页面的内容结构化，便于对浏览器、搜索引擎解析；在没有样式CCS情况下也以一种文档格式显示，并且是容易阅读的。搜索引擎的爬虫依赖于标记来确定上下文和各个关键字的权重，利于SEO。使阅读源代码的人对网站更容易将网站分块，便于阅读维护理解
+                </div>
+            </div>
+            <div class="panel panel-default">
+                <div class="panel-heading">3 .HTML5的form如何关闭自动完成功能？</div>
+                <div class="panel-body">
+                    关闭输入框的自动完成功能有3种方法：
+
+                    1、在IE的Internet选项菜单里的内容--自动完成里面设置<br>
+
+                    2、设置Form的autocomplete为"on"或者"off"来开启或者关闭自动完成功能<br>
+
+                    3、设置输入框的autocomplete为"on"或者"off"来开启或者关闭该输入框的自动完成功能
+                </div>
+            </div>
+            <div class="panel panel-default">
+                <div class="panel-heading">4.Doctype作用？严格模式与混杂模式如何区分？它们有何意义?</div>
+                <div class="panel-body">
+                    1、Doctype作用? 严格模式与混杂模式如何区分？它们有何意义? （1）、声明位于文档中的最前面，处于标签之前。告知浏览器的解析器，用 什么文档类型规范来解析这个文档。 （2）、严格模式的排版和JS 运作模式是以该浏览器支持的最高标准运行。 （3）、在混杂模式中，页面以宽松的向后兼容的方式显示。模拟老式浏览器的行为以防止站点无法工作。 （4）、DOCTYPE不存在或格式不正确会导致文档以混杂模式呈现。
+                </div>
+            </div>
+            <div class="panel panel-default">
+                <div class="panel-heading">5.HTML5 如果我不放入《! DOCTYPE html》，HTML5还会工作么？</div>
+                <div class="panel-body">
+                    不会，浏览器将不能识别他是HTML文档，同时HTML5的标签将不能正常工作
+                </div>
+            </div>
+            <div class="panel panel-default">
+                <div class="panel-heading">6.HTML5的离线储存怎么使用，工作原理能不能解释一下</div>
+                <div class="panel-body">
+                    原理：HTML5的离线存储是基于一个新建的.appcache文件的，通过这个文件上的解析清单离线存储资源，这些资源就会像cookie一样被存储了下来。之后当网络在处于离线状态下时，浏览器会通过被离线存储的数据进行页面展示。<br>
+                    方法：1.在index.html里加上《html manifest="test.manifest"》<br>
+                    2.manifest文件的mime-type必须是 text/cache-manifest类型
+                </div>
+            </div>
+            <div class="panel panel-default">
+                <div class="panel-heading">7.HTML5 Canvas 元素有什么用？</div>
+                <div class="panel-body">
+                    Canvas 元素用于在网页上绘制图形，该元素标签强大之处在于可以直接在 HTML 上进行图形操作，
+                </div>
+            </div>
+            <div class="panel panel-default">
+                <div class="panel-heading">8.HTML5 存储类型有什么区别？</div>
+                <div class="panel-body">
+                    HTML5 能够本地存储数据，在之前都是使用 cookies 使用的。HTML5 提供了下面两种本地存储方案：
+
+                    localStorage 用于持久化的本地存储，数据永远不会过期，关闭浏览器也不会丢失。<br>
+                    sessionStorage 同一个会话中的页面才能访问并且当会话结束后数据也随之销毁。因此sessionStorage不是一种持久化的本地存储，仅仅是会话级别的存储
+                </div>
+            </div>
+            <div class="panel panel-default">
+                <div class="panel-heading">9.HTML5 有哪些新增的表单元素？</div>
+                <div class="panel-body">
+                   <img src="img/h5-f.png">
+                </div>
+            </div>
+            <div class="panel panel-default">
+                <div class="panel-heading">10.HTML5 标准提供了哪些新的 API？</div>
+                <div class="panel-body">
+                    <img src="img/h5-a.png">
+                </div>
+            </div>
+            <div class="panel panel-default">
+                <div class="panel-heading">11.HTML5的离线储存有几种方式？</div>
+                <div class="panel-body">
+                    localStorage长期存储数据，浏览器关闭后数据不丢失；sessionStorage  数 据在浏览器关闭后自动删除。
+                </div>
+            </div>
+            <div class="panel panel-default">
+                <div class="panel-heading">12.iframe有那些缺点？</div>
+                <div class="panel-body">
+                    iframe和主页面共享连接池，而浏览器对相同域的连接有限制，所以会影响页面的并行加载。使用iframe之前需要考虑这两个缺点。如果需要使用iframe，最好是通过javascript动态给iframe添加src属性值，这样可以可以绕开以上两个问题
+                </div>
+            </div>
+            <div class="panel panel-default">
+                <div class="panel-heading">13.请描述一下cookies，sessionStorage和localStorage的区别？</div>
+                <div class="panel-body">
+
+                    HTML语义化就是让页面的内容结构化，便于对浏览器、搜索引擎解析；在没有样式CCS情况下也以一种文档格式显示，并且是容易阅读的。搜索引擎的爬虫依赖于标记来确定上下文和各个关键字的权重，利于SEO。使阅读源代码的人对网站更容易将网站分块，便于阅读维护理解。 7、HTML5的离线储存有几种方式？ localStorage长期存储数据，浏览器关闭后数据不丢失；sessionStorage  数 据在浏览器关闭后自动删除。 8、iframe有那些缺点？ iframe会阻塞主页面的Onload事件； iframe和主页面共享连接池，而浏览器对相同域的连接有限制，所以会影响页面的并行加载。使用iframe之前需要考虑这两个缺点。如果需要使用iframe，最好是通过javascript动态给iframe添加src属性值，这样可以可以绕开以上两个问题。 9、请描述一下cookies，sessionStorage和localStorage的区别？ cookie在浏览器和服务器间来回传递。sessionStorage和localStorage不会sessionStorage和localStorage的存储空间更大；sessionStorage和 localStorage有更多丰富易用的接口；sessionStorage和localStorage各自独立的存储空间；
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--httpShow-->
+    <div class="http-show">
+        <div class="container-fluid">
+            <div class="panel panel-default">
+                <div class="panel-heading">1.一次完整的HTTP事务是怎样的一个过程？</div>
+                <div class="panel-body">
+                   <img src="img/http-l.png">
+                </div>
+            </div>
+            <div class="panel panel-default">
+                <div class="panel-heading">2.HTTP的状态码有哪些？</div>
+                <div class="panel-body">
+
+                    HTTP状态码常用的有哪些？
+                    一、200状态码：
+                    成功2××： 成功处理了请求的状态码。<br>  1、200 ：服务器已成功处理了请求并提供了请求的网页。 <br>
+                    2、204： 服务器成功处理了请求，但没有返回任何内容。<br>
+                    二、300状态码：
+                    重定向3××：每次请求中使用重定向不要超过5 次。<br>
+                    1、301：请求的网页已永久移动到新位置。当URLs发生变化时，使用301代码。搜索引擎索引中保存新的URL。<br>
+                    2、302：请求的网页临时移动到新位置。搜索引擎索引中保存原来的URL。<br>
+                    3、304：如果网页自请求者上次请求后没有更新，则用304代码告诉搜索引擎机器人，可节省带宽和开销。<br>
+                    三、400状态码：客户端错误4×× ：表示请求可能出错，妨碍了服务器的处理。<br>
+                    1、400： 服务器不理解请求的语法。<br>
+                    2、403： 服务器拒绝请求。<br>
+                    3、404： 服务器找不到请求的网页。服务器上不存在的网页经常会返回此代码。<br>
+                    4、410 ：请求的资源永久删除后，服务器返回此响应。该代码与 404（未找到）代码相似，但在资源以前存在而现在不存在的情况下，有时用来替404页面代码。如果资源已永久删除，应当使用301指定资源的新位置。<br>
+                    四、500状态码：服务器错误5×× ：表示服务器在处理请求时发生内部错误。这些错误可能是服务器本身的错误，而不是请求出错。<br>
+                    1、500 ：服务器遇到错误，无法完成请求。<br>  2、503： 服务器目前无法使用（由于超载或停机维护）。
+
+                </div>
+            </div>
+            <div class="panel panel-default">
+                <div class="panel-heading">3 .HTTPS是如何实现加密？</div>
+                <div class="panel-body">
+                    https是在http的基础上多了一次协议ssl，该协议用来给传输的内容进行加密
+                    https加密流程：
+                    1，客户端将SSL 协议的版本号、加密算法的种类，产生的随机数A等信息传给服务器
+                    2，服务器选择其中的一种组合作为加密方式，同时将自己的证书、公钥、另外一个随机数B一起传给客户端
+                    3，客户端验证客户端返回的信息（包括证书，签名，域名等），验证成功，则生成对称加密密钥S，用公钥加密后返回给服务器
+                    4，服务器用私钥将这段密钥解密。得到对称密钥S，并用此密钥加密一段握手消息返回给客户端
+                    5，客户端收到握手消息，用对称密钥解密，验证成功，则握手成功。
+                </div>
+            </div>
+            <div class="panel panel-default">
+                <div class="panel-heading">4 .请大概描述下页面访问cookie的限制条件？</div>
+                <div class="panel-body">
+                    1.跨域问题2.设置了HttpOnly
+                </div>
+            </div>
+            <div class="panel panel-default">
+                <div class="panel-heading">5.说说 http缓存</div>
+                <div class="panel-body">
+                    http中具有缓存功能的是浏览器缓存，以及缓存代理服务器。
+                    http缓存的是指:当Web请求抵达缓存时， 如果本地有“已缓存的”副本，就可以从本地存储设备而不是从原始服务器中提取这个文档。
+                    <br>
+                    浏览器是如何知道使用缓存的，其实这都是通过http中，浏览器将最后修改时间发送请求给web服务器，web服务器收到请求后跟服务器上的文档最后修改的时间对比，如果web服务器上最新文档修改时间小于或者等于浏览器发送过来的，则发送304给浏览器，使用缓存版本。
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- xmind-show-->
+    <div class="xmind-show">
+        <div class="container-fluid">
+            <img src="img/web.png">
+        </div>
+    </div>
+</div>
+
+
+
+
+
+<script src="http://cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/seniorEngineer.js" type="text/javascript" ></script>
+</body>
+</html>

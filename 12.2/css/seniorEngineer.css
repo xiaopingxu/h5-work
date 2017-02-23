@@ -1,0 +1,6 @@
+.js-show,.css-show,.html-show,.http-show,.xmind-show{
+    display: none;
+}
+.tab-active{
+    background-color:#F2F2F2;
+}
