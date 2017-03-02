@@ -1,0 +1,66 @@
+/**
+ * Created by Administrator on 2017/2/24 0024.
+ */
+var canvas;
+var stage;
+var img=new Image();
+var sprite;
+window.onload=function(){
+    canvas=document.getElementById("myCanvas");
+    stage=new createjs.Stage(canvas);
+
+    stage.addEventListener("stagemousedown",clickCanvas);
+    stage.addEventListener("stagemousemove",moveCanvas);
+
+    var data={
+        images:["img/yanhua.png"],
+        frames:{width:40,height:40,regX:10,regY:10}
+    };
+    sprite=new createjs.Sprite(new createjs.SpriteSheet(data));
+    createjs.Ticker.setFPS(20);
+    createjs.Ticker.addEventListener("tick",tick);
+};
+function tick(e){
+    var t=stage.getNumChildren();
+    for(var i=t- 1;i>0;i--){
+        var s=stage.getChildAt(i);
+        s.vY+=2;
+        s.vX+=1;
+        s.x+= s.vX;
+        s.y+= s.vY;
+        s.scaleX= s.scaleY=s.scaleX+ s.vS;//花瓣大小
+        s.alpha+= s.vA;//透明度变化
+        if(s.alpha<=0|| s.y>canvas.height){
+            stage.removeChildAt(i);
+        }//消失
+
+    }
+    stage.update(e);
+}
+function clickCanvas(e){
+   adds(Math.random()*200+100,stage.mouseX,stage.mouseY,2);
+}
+function moveCanvas(e){
+    adds(Math.random()*2+1,stage.mouseX,stage.mouseY,1);
+}
+function adds(count,x,y,speed){
+    for (var i=0;i<count;i++){
+        var s=sprite.clone();
+        s.x=x;
+        s.y=y;
+        s.alpha=Math.random()*0.5+0.5;//透明度
+        s.scaleX= s.scaleY=Math.random()+0.3;//缩放
+
+        var a=Math.PI*2*Math.random();//范围
+        var v=(Math.random()-0.5)*30*speed;//速度
+
+        s.vX=Math.cos(a)*v;
+        s.vY=Math.sin(a)*v;
+        s.vS=(Math.random()-0.5)*0.2;//scale
+        s.vA=-Math.random()*0.05-0.01;//alpha
+
+        stage.addChild(s);
+
+    }
+
+}
