@@ -1,0 +1,11 @@
+.myheading{
+	background-color: 	#F7F7F7;
+
+}
+.logo{
+	width: 75px;
+	border-radius: 50%;
+}
+.queryPage,.putawayPage,.borrowPage,.returnPage,.editPage{
+	display: none;
+}
